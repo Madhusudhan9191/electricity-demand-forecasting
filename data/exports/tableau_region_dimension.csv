@@ -1,0 +1,4 @@
+region_id,region_name,state_anchor,latitude,longitude,timezone,grid_type,benchmark_event
+ERCOT,Electric Reliability Council of Texas,Texas,32.7767,-96.797,US/Central,Independent Interconnection (Summer Peaking),Feb 2021 Winter Storm Uri & Summer 2023 Heatwave
+PJM,PJM Interconnection,Pennsylvania / Mid-Atlantic,39.9526,-75.1652,US/Eastern,Regional Transmission Org (Dual Peaking),Winter Heating & Summer Cooling AC Peaks
+NYIS,New York Independent System Operator,New York,40.7128,-74.006,US/Eastern,Independent System Operator (Urban High-Density),NYC Metro Commercial Load Transitions

@@ -1,0 +1,2042 @@
+{
+  "ERCOT": {
+    "region": "ERCOT",
+    "demand": {
+      "total_rows": 43848,
+      "expected_rows": 43848,
+      "min_timestamp": "2020-01-01 00:00:00+00:00",
+      "max_timestamp": "2024-12-31 23:00:00+00:00",
+      "duplicate_timestamps": 0,
+      "missing_hours": 0,
+      "raw_nans": 0,
+      "clean_nans": 0,
+      "raw_zero_or_negative": 0,
+      "clean_zero_or_negative": 0,
+      "imputed_source_revisions_count": 549,
+      "imputed_pct": 1.252,
+      "outlier_flags_count": 7,
+      "raw_stats": {
+        "min": 26274.0,
+        "max": 85559.0,
+        "mean": 48227.594371465064,
+        "median": 45652.5,
+        "std": 10942.697598858418
+      },
+      "clean_stats": {
+        "min": 27445.0,
+        "max": 85559.0,
+        "mean": 48247.80464331326,
+        "median": 45663.5,
+        "std": 10947.427883917664
+      },
+      "annual_means": {
+        "2020": 43371.5,
+        "2021": 44813.3,
+        "2022": 49162.5,
+        "2023": 51011.2,
+        "2024": 52881.2
+      },
+      "monthly_audit": [
+        {
+          "year_month": "2020-01",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 1,
+          "mean_mw": 38931.3,
+          "max_mw": 48990.0,
+          "min_mw": 30700.0
+        },
+        {
+          "year_month": "2020-02",
+          "rows": 696,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.15,
+          "outliers": 2,
+          "mean_mw": 40240.2,
+          "max_mw": 56183.0,
+          "min_mw": 29814.0
+        },
+        {
+          "year_month": "2020-03",
+          "rows": 744,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.67,
+          "outliers": 0,
+          "mean_mw": 37920.0,
+          "max_mw": 52702.0,
+          "min_mw": 28785.0
+        },
+        {
+          "year_month": "2020-04",
+          "rows": 720,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.28,
+          "outliers": 0,
+          "mean_mw": 37361.2,
+          "max_mw": 55181.0,
+          "min_mw": 27668.0
+        },
+        {
+          "year_month": "2020-05",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 41886.3,
+          "max_mw": 64201.0,
+          "min_mw": 27445.0
+        },
+        {
+          "year_month": "2020-06",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 49006.6,
+          "max_mw": 67793.0,
+          "min_mw": 32464.0
+        },
+        {
+          "year_month": "2020-07",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 54049.7,
+          "max_mw": 73962.0,
+          "min_mw": 37191.0
+        },
+        {
+          "year_month": "2020-08",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 54714.3,
+          "max_mw": 74165.0,
+          "min_mw": 35171.0
+        },
+        {
+          "year_month": "2020-09",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 45636.9,
+          "max_mw": 70909.0,
+          "min_mw": 29752.0
+        },
+        {
+          "year_month": "2020-10",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 42023.4,
+          "max_mw": 62904.0,
+          "min_mw": 29888.0
+        },
+        {
+          "year_month": "2020-11",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 37732.1,
+          "max_mw": 48841.0,
+          "min_mw": 29883.0
+        },
+        {
+          "year_month": "2020-12",
+          "rows": 744,
+          "imputed_or_diff": 10,
+          "imputed_pct": 1.34,
+          "outliers": 0,
+          "mean_mw": 40633.0,
+          "max_mw": 55795.0,
+          "min_mw": 30889.0
+        },
+        {
+          "year_month": "2021-01",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 41426.2,
+          "max_mw": 58455.0,
+          "min_mw": 31664.0
+        },
+        {
+          "year_month": "2021-02",
+          "rows": 672,
+          "imputed_or_diff": 28,
+          "imputed_pct": 4.17,
+          "outliers": 0,
+          "mean_mw": 43128.0,
+          "max_mw": 69223.0,
+          "min_mw": 27715.0
+        },
+        {
+          "year_month": "2021-03",
+          "rows": 744,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.27,
+          "outliers": 0,
+          "mean_mw": 36648.0,
+          "max_mw": 45272.0,
+          "min_mw": 29679.0
+        },
+        {
+          "year_month": "2021-04",
+          "rows": 720,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.11,
+          "outliers": 0,
+          "mean_mw": 38975.8,
+          "max_mw": 52678.0,
+          "min_mw": 29376.0
+        },
+        {
+          "year_month": "2021-05",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 42686.5,
+          "max_mw": 62826.0,
+          "min_mw": 31401.0
+        },
+        {
+          "year_month": "2021-06",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 51760.4,
+          "max_mw": 70086.0,
+          "min_mw": 33626.0
+        },
+        {
+          "year_month": "2021-07",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 53117.2,
+          "max_mw": 72855.0,
+          "min_mw": 38193.0
+        },
+        {
+          "year_month": "2021-08",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 55590.0,
+          "max_mw": 73473.0,
+          "min_mw": 39680.0
+        },
+        {
+          "year_month": "2021-09",
+          "rows": 720,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.28,
+          "outliers": 0,
+          "mean_mw": 50881.8,
+          "max_mw": 72214.0,
+          "min_mw": 32534.0
+        },
+        {
+          "year_month": "2021-10",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 44004.0,
+          "max_mw": 62350.0,
+          "min_mw": 29971.0
+        },
+        {
+          "year_month": "2021-11",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 38841.5,
+          "max_mw": 49051.0,
+          "min_mw": 31045.0
+        },
+        {
+          "year_month": "2021-12",
+          "rows": 744,
+          "imputed_or_diff": 11,
+          "imputed_pct": 1.48,
+          "outliers": 0,
+          "mean_mw": 40576.3,
+          "max_mw": 49203.0,
+          "min_mw": 31561.0
+        },
+        {
+          "year_month": "2022-01",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 44910.3,
+          "max_mw": 63486.0,
+          "min_mw": 33152.0
+        },
+        {
+          "year_month": "2022-02",
+          "rows": 672,
+          "imputed_or_diff": 29,
+          "imputed_pct": 4.32,
+          "outliers": 0,
+          "mean_mw": 46551.4,
+          "max_mw": 68865.0,
+          "min_mw": 32867.0
+        },
+        {
+          "year_month": "2022-03",
+          "rows": 744,
+          "imputed_or_diff": 6,
+          "imputed_pct": 0.81,
+          "outliers": 0,
+          "mean_mw": 40997.1,
+          "max_mw": 56419.0,
+          "min_mw": 32260.0
+        },
+        {
+          "year_month": "2022-04",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 42804.3,
+          "max_mw": 58484.0,
+          "min_mw": 31954.0
+        },
+        {
+          "year_month": "2022-05",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 51770.8,
+          "max_mw": 71688.0,
+          "min_mw": 34011.0
+        },
+        {
+          "year_month": "2022-06",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 58462.1,
+          "max_mw": 76592.0,
+          "min_mw": 38459.0
+        },
+        {
+          "year_month": "2022-07",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 61783.7,
+          "max_mw": 79830.0,
+          "min_mw": 43455.0
+        },
+        {
+          "year_month": "2022-08",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 57985.6,
+          "max_mw": 78364.0,
+          "min_mw": 42202.0
+        },
+        {
+          "year_month": "2022-09",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 52107.8,
+          "max_mw": 70983.0,
+          "min_mw": 35325.0
+        },
+        {
+          "year_month": "2022-10",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 43382.7,
+          "max_mw": 66058.0,
+          "min_mw": 32493.0
+        },
+        {
+          "year_month": "2022-11",
+          "rows": 720,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.25,
+          "outliers": 0,
+          "mean_mw": 43353.8,
+          "max_mw": 53365.0,
+          "min_mw": 33545.0
+        },
+        {
+          "year_month": "2022-12",
+          "rows": 744,
+          "imputed_or_diff": 24,
+          "imputed_pct": 3.23,
+          "outliers": 0,
+          "mean_mw": 45589.6,
+          "max_mw": 74065.0,
+          "min_mw": 33593.0
+        },
+        {
+          "year_month": "2023-01",
+          "rows": 744,
+          "imputed_or_diff": 11,
+          "imputed_pct": 1.48,
+          "outliers": 0,
+          "mean_mw": 43163.0,
+          "max_mw": 64605.0,
+          "min_mw": 33962.0
+        },
+        {
+          "year_month": "2023-02",
+          "rows": 672,
+          "imputed_or_diff": 12,
+          "imputed_pct": 1.79,
+          "outliers": 0,
+          "mean_mw": 45317.9,
+          "max_mw": 65558.0,
+          "min_mw": 34352.0
+        },
+        {
+          "year_month": "2023-03",
+          "rows": 744,
+          "imputed_or_diff": 65,
+          "imputed_pct": 8.74,
+          "outliers": 0,
+          "mean_mw": 42976.2,
+          "max_mw": 52982.0,
+          "min_mw": 34220.0
+        },
+        {
+          "year_month": "2023-04",
+          "rows": 720,
+          "imputed_or_diff": 19,
+          "imputed_pct": 2.64,
+          "outliers": 0,
+          "mean_mw": 42896.5,
+          "max_mw": 61213.0,
+          "min_mw": 33689.0
+        },
+        {
+          "year_month": "2023-05",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 49156.0,
+          "max_mw": 68352.0,
+          "min_mw": 34588.0
+        },
+        {
+          "year_month": "2023-06",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 59524.1,
+          "max_mw": 80827.0,
+          "min_mw": 38536.0
+        },
+        {
+          "year_month": "2023-07",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 63981.8,
+          "max_mw": 83048.0,
+          "min_mw": 45567.0
+        },
+        {
+          "year_month": "2023-08",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 67866.6,
+          "max_mw": 85436.0,
+          "min_mw": 46985.0
+        },
+        {
+          "year_month": "2023-09",
+          "rows": 720,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.11,
+          "outliers": 0,
+          "mean_mw": 60039.9,
+          "max_mw": 84644.0,
+          "min_mw": 41618.0
+        },
+        {
+          "year_month": "2023-10",
+          "rows": 744,
+          "imputed_or_diff": 73,
+          "imputed_pct": 9.81,
+          "outliers": 0,
+          "mean_mw": 48040.3,
+          "max_mw": 71524.0,
+          "min_mw": 34880.0
+        },
+        {
+          "year_month": "2023-11",
+          "rows": 720,
+          "imputed_or_diff": 14,
+          "imputed_pct": 1.94,
+          "outliers": 0,
+          "mean_mw": 43806.6,
+          "max_mw": 56885.0,
+          "min_mw": 35498.0
+        },
+        {
+          "year_month": "2023-12",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 44886.8,
+          "max_mw": 57243.0,
+          "min_mw": 36314.0
+        },
+        {
+          "year_month": "2024-01",
+          "rows": 744,
+          "imputed_or_diff": 14,
+          "imputed_pct": 1.88,
+          "outliers": 1,
+          "mean_mw": 51466.0,
+          "max_mw": 78138.0,
+          "min_mw": 38440.0
+        },
+        {
+          "year_month": "2024-02",
+          "rows": 696,
+          "imputed_or_diff": 23,
+          "imputed_pct": 3.3,
+          "outliers": 1,
+          "mean_mw": 44146.2,
+          "max_mw": 56053.0,
+          "min_mw": 36240.0
+        },
+        {
+          "year_month": "2024-03",
+          "rows": 744,
+          "imputed_or_diff": 19,
+          "imputed_pct": 2.55,
+          "outliers": 0,
+          "mean_mw": 43616.6,
+          "max_mw": 55320.0,
+          "min_mw": 36193.0
+        },
+        {
+          "year_month": "2024-04",
+          "rows": 720,
+          "imputed_or_diff": 16,
+          "imputed_pct": 2.22,
+          "outliers": 0,
+          "mean_mw": 46648.4,
+          "max_mw": 64271.0,
+          "min_mw": 36348.0
+        },
+        {
+          "year_month": "2024-05",
+          "rows": 744,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.67,
+          "outliers": 0,
+          "mean_mw": 54009.5,
+          "max_mw": 77126.0,
+          "min_mw": 37343.0
+        },
+        {
+          "year_month": "2024-06",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 61925.9,
+          "max_mw": 80069.0,
+          "min_mw": 43289.0
+        },
+        {
+          "year_month": "2024-07",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 60200.9,
+          "max_mw": 81190.0,
+          "min_mw": 39903.0
+        },
+        {
+          "year_month": "2024-08",
+          "rows": 744,
+          "imputed_or_diff": 22,
+          "imputed_pct": 2.96,
+          "outliers": 0,
+          "mean_mw": 66629.6,
+          "max_mw": 85559.0,
+          "min_mw": 48661.0
+        },
+        {
+          "year_month": "2024-09",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 57321.6,
+          "max_mw": 77908.0,
+          "min_mw": 40258.0
+        },
+        {
+          "year_month": "2024-10",
+          "rows": 744,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.94,
+          "outliers": 0,
+          "mean_mw": 53252.4,
+          "max_mw": 72660.0,
+          "min_mw": 38461.0
+        },
+        {
+          "year_month": "2024-11",
+          "rows": 720,
+          "imputed_or_diff": 25,
+          "imputed_pct": 3.47,
+          "outliers": 0,
+          "mean_mw": 47414.2,
+          "max_mw": 60891.0,
+          "min_mw": 38271.0
+        },
+        {
+          "year_month": "2024-12",
+          "rows": 744,
+          "imputed_or_diff": 22,
+          "imputed_pct": 2.96,
+          "outliers": 2,
+          "mean_mw": 47436.6,
+          "max_mw": 60445.0,
+          "min_mw": 38412.0
+        }
+      ]
+    },
+    "weather": {
+      "total_rows": 43848,
+      "duplicate_timestamps": 0,
+      "null_counts": {
+        "temp_c": 0,
+        "rel_humidity_pct": 0,
+        "wind_speed_kmh": 0,
+        "cloud_cover_pct": 0,
+        "direct_solar_wm2": 0
+      },
+      "weather_stats": {
+        "temp_c": {
+          "min": -18.9,
+          "max": 42.9,
+          "mean": 19.84
+        },
+        "rel_humidity_pct": {
+          "min": 8.0,
+          "max": 100.0,
+          "mean": 64.74
+        },
+        "wind_speed_kmh": {
+          "min": 0.0,
+          "max": 51.4,
+          "mean": 14.55
+        },
+        "cloud_cover_pct": {
+          "min": 0.0,
+          "max": 100.0,
+          "mean": 45.69
+        },
+        "direct_solar_wm2": {
+          "min": 0.0,
+          "max": 964.1,
+          "mean": 232.04
+        }
+      },
+      "alignment_with_demand_pct": 100.0
+    }
+  },
+  "PJM": {
+    "region": "PJM",
+    "demand": {
+      "total_rows": 43848,
+      "expected_rows": 43848,
+      "min_timestamp": "2020-01-01 00:00:00+00:00",
+      "max_timestamp": "2024-12-31 23:00:00+00:00",
+      "duplicate_timestamps": 0,
+      "missing_hours": 0,
+      "raw_nans": 0,
+      "clean_nans": 0,
+      "raw_zero_or_negative": 193,
+      "clean_zero_or_negative": 0,
+      "imputed_source_revisions_count": 1050,
+      "imputed_pct": 2.395,
+      "outlier_flags_count": 4,
+      "raw_stats": {
+        "min": 0.0,
+        "max": 1526706009.0,
+        "mean": 147377.60994800218,
+        "median": 86668.5,
+        "std": 8817164.281215442
+      },
+      "clean_stats": {
+        "min": 55207.0,
+        "max": 151816.0,
+        "mean": 89240.03147235906,
+        "median": 86704.0,
+        "std": 15852.353875190933
+      },
+      "annual_means": {
+        "2020": 86011.1,
+        "2021": 89533.8,
+        "2022": 90987.7,
+        "2023": 88249.7,
+        "2024": 91420.6
+      },
+      "monthly_audit": [
+        {
+          "year_month": "2020-01",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 91412.5,
+          "max_mw": 118837.0,
+          "min_mw": 64067.0
+        },
+        {
+          "year_month": "2020-02",
+          "rows": 696,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 90093.6,
+          "max_mw": 114515.0,
+          "min_mw": 69646.0
+        },
+        {
+          "year_month": "2020-03",
+          "rows": 744,
+          "imputed_or_diff": 28,
+          "imputed_pct": 3.76,
+          "outliers": 0,
+          "mean_mw": 79771.7,
+          "max_mw": 98303.0,
+          "min_mw": 59648.0
+        },
+        {
+          "year_month": "2020-04",
+          "rows": 720,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.28,
+          "outliers": 0,
+          "mean_mw": 71868.9,
+          "max_mw": 85328.0,
+          "min_mw": 57151.0
+        },
+        {
+          "year_month": "2020-05",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 73175.9,
+          "max_mw": 107669.0,
+          "min_mw": 55207.0
+        },
+        {
+          "year_month": "2020-06",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 89687.3,
+          "max_mw": 129965.0,
+          "min_mw": 57249.0
+        },
+        {
+          "year_month": "2020-07",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 107747.4,
+          "max_mw": 143752.0,
+          "min_mw": 70417.0
+        },
+        {
+          "year_month": "2020-08",
+          "rows": 744,
+          "imputed_or_diff": 25,
+          "imputed_pct": 3.36,
+          "outliers": 0,
+          "mean_mw": 98861.5,
+          "max_mw": 140003.0,
+          "min_mw": 66841.0
+        },
+        {
+          "year_month": "2020-09",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 83015.3,
+          "max_mw": 125387.0,
+          "min_mw": 57720.0
+        },
+        {
+          "year_month": "2020-10",
+          "rows": 744,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.27,
+          "outliers": 0,
+          "mean_mw": 75210.7,
+          "max_mw": 90511.0,
+          "min_mw": 59427.0
+        },
+        {
+          "year_month": "2020-11",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 79026.6,
+          "max_mw": 100141.0,
+          "min_mw": 60814.0
+        },
+        {
+          "year_month": "2020-12",
+          "rows": 744,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.27,
+          "outliers": 0,
+          "mean_mw": 91866.1,
+          "max_mw": 113510.0,
+          "min_mw": 67726.0
+        },
+        {
+          "year_month": "2021-01",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 94607.0,
+          "max_mw": 116503.0,
+          "min_mw": 73886.0
+        },
+        {
+          "year_month": "2021-02",
+          "rows": 672,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.34,
+          "outliers": 0,
+          "mean_mw": 98538.7,
+          "max_mw": 116194.0,
+          "min_mw": 71604.0
+        },
+        {
+          "year_month": "2021-03",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 82592.9,
+          "max_mw": 106599.0,
+          "min_mw": 60395.0
+        },
+        {
+          "year_month": "2021-04",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 76482.7,
+          "max_mw": 96079.0,
+          "min_mw": 59696.0
+        },
+        {
+          "year_month": "2021-05",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 78976.7,
+          "max_mw": 119669.0,
+          "min_mw": 59075.0
+        },
+        {
+          "year_month": "2021-06",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 95829.0,
+          "max_mw": 146902.0,
+          "min_mw": 59564.0
+        },
+        {
+          "year_month": "2021-07",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 102550.1,
+          "max_mw": 146417.0,
+          "min_mw": 64037.0
+        },
+        {
+          "year_month": "2021-08",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 105083.1,
+          "max_mw": 149536.0,
+          "min_mw": 69032.0
+        },
+        {
+          "year_month": "2021-09",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 88586.5,
+          "max_mw": 132727.0,
+          "min_mw": 60553.0
+        },
+        {
+          "year_month": "2021-10",
+          "rows": 744,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.94,
+          "outliers": 0,
+          "mean_mw": 79036.7,
+          "max_mw": 103109.0,
+          "min_mw": 59855.0
+        },
+        {
+          "year_month": "2021-11",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 84912.4,
+          "max_mw": 105061.0,
+          "min_mw": 64340.0
+        },
+        {
+          "year_month": "2021-12",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 87683.7,
+          "max_mw": 109516.0,
+          "min_mw": 63850.0
+        },
+        {
+          "year_month": "2022-01",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 102548.3,
+          "max_mw": 129423.0,
+          "min_mw": 64634.0
+        },
+        {
+          "year_month": "2022-02",
+          "rows": 672,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.15,
+          "outliers": 0,
+          "mean_mw": 95442.6,
+          "max_mw": 123937.0,
+          "min_mw": 71581.0
+        },
+        {
+          "year_month": "2022-03",
+          "rows": 744,
+          "imputed_or_diff": 23,
+          "imputed_pct": 3.09,
+          "outliers": 0,
+          "mean_mw": 84696.6,
+          "max_mw": 110179.0,
+          "min_mw": 64162.0
+        },
+        {
+          "year_month": "2022-04",
+          "rows": 720,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.14,
+          "outliers": 0,
+          "mean_mw": 78763.4,
+          "max_mw": 95261.0,
+          "min_mw": 61279.0
+        },
+        {
+          "year_month": "2022-05",
+          "rows": 744,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.27,
+          "outliers": 0,
+          "mean_mw": 81864.0,
+          "max_mw": 138167.0,
+          "min_mw": 61798.0
+        },
+        {
+          "year_month": "2022-06",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 94344.2,
+          "max_mw": 139327.0,
+          "min_mw": 61358.0
+        },
+        {
+          "year_month": "2022-07",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 104862.3,
+          "max_mw": 147918.0,
+          "min_mw": 68158.0
+        },
+        {
+          "year_month": "2022-08",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 103003.4,
+          "max_mw": 143626.0,
+          "min_mw": 68219.0
+        },
+        {
+          "year_month": "2022-09",
+          "rows": 720,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 87653.9,
+          "max_mw": 127630.0,
+          "min_mw": 61129.0
+        },
+        {
+          "year_month": "2022-10",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 77425.7,
+          "max_mw": 96150.0,
+          "min_mw": 61555.0
+        },
+        {
+          "year_month": "2022-11",
+          "rows": 720,
+          "imputed_or_diff": 31,
+          "imputed_pct": 4.31,
+          "outliers": 0,
+          "mean_mw": 84281.2,
+          "max_mw": 112921.0,
+          "min_mw": 61692.0
+        },
+        {
+          "year_month": "2022-12",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 96788.4,
+          "max_mw": 135368.0,
+          "min_mw": 71238.0
+        },
+        {
+          "year_month": "2023-01",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 91954.0,
+          "max_mw": 109352.0,
+          "min_mw": 69643.0
+        },
+        {
+          "year_month": "2023-02",
+          "rows": 672,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 90220.1,
+          "max_mw": 121501.0,
+          "min_mw": 70557.0
+        },
+        {
+          "year_month": "2023-03",
+          "rows": 744,
+          "imputed_or_diff": 25,
+          "imputed_pct": 3.36,
+          "outliers": 2,
+          "mean_mw": 86517.6,
+          "max_mw": 111496.0,
+          "min_mw": 68974.0
+        },
+        {
+          "year_month": "2023-04",
+          "rows": 720,
+          "imputed_or_diff": 34,
+          "imputed_pct": 4.72,
+          "outliers": 0,
+          "mean_mw": 77565.8,
+          "max_mw": 98175.0,
+          "min_mw": 62445.0
+        },
+        {
+          "year_month": "2023-05",
+          "rows": 744,
+          "imputed_or_diff": 215,
+          "imputed_pct": 28.9,
+          "outliers": 0,
+          "mean_mw": 78058.1,
+          "max_mw": 106603.0,
+          "min_mw": 60301.0
+        },
+        {
+          "year_month": "2023-06",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 87127.6,
+          "max_mw": 123134.0,
+          "min_mw": 62812.0
+        },
+        {
+          "year_month": "2023-07",
+          "rows": 744,
+          "imputed_or_diff": 25,
+          "imputed_pct": 3.36,
+          "outliers": 0,
+          "mean_mw": 104309.0,
+          "max_mw": 147194.0,
+          "min_mw": 70270.0
+        },
+        {
+          "year_month": "2023-08",
+          "rows": 744,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.21,
+          "outliers": 0,
+          "mean_mw": 99735.4,
+          "max_mw": 137990.0,
+          "min_mw": 68573.0
+        },
+        {
+          "year_month": "2023-09",
+          "rows": 720,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.28,
+          "outliers": 0,
+          "mean_mw": 88362.1,
+          "max_mw": 146326.0,
+          "min_mw": 62485.0
+        },
+        {
+          "year_month": "2023-10",
+          "rows": 744,
+          "imputed_or_diff": 224,
+          "imputed_pct": 30.11,
+          "outliers": 0,
+          "mean_mw": 79044.2,
+          "max_mw": 111728.0,
+          "min_mw": 61866.0
+        },
+        {
+          "year_month": "2023-11",
+          "rows": 720,
+          "imputed_or_diff": 64,
+          "imputed_pct": 8.89,
+          "outliers": 0,
+          "mean_mw": 85453.6,
+          "max_mw": 116869.0,
+          "min_mw": 68200.0
+        },
+        {
+          "year_month": "2023-12",
+          "rows": 744,
+          "imputed_or_diff": 31,
+          "imputed_pct": 4.17,
+          "outliers": 0,
+          "mean_mw": 90372.6,
+          "max_mw": 114600.0,
+          "min_mw": 68554.0
+        },
+        {
+          "year_month": "2024-01",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 100205.7,
+          "max_mw": 133552.0,
+          "min_mw": 73172.0
+        },
+        {
+          "year_month": "2024-02",
+          "rows": 696,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.15,
+          "outliers": 0,
+          "mean_mw": 91360.6,
+          "max_mw": 112057.0,
+          "min_mw": 70255.0
+        },
+        {
+          "year_month": "2024-03",
+          "rows": 744,
+          "imputed_or_diff": 28,
+          "imputed_pct": 3.76,
+          "outliers": 2,
+          "mean_mw": 83623.6,
+          "max_mw": 106003.0,
+          "min_mw": 66234.0
+        },
+        {
+          "year_month": "2024-04",
+          "rows": 720,
+          "imputed_or_diff": 26,
+          "imputed_pct": 3.61,
+          "outliers": 0,
+          "mean_mw": 79624.7,
+          "max_mw": 106150.0,
+          "min_mw": 64564.0
+        },
+        {
+          "year_month": "2024-05",
+          "rows": 744,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.67,
+          "outliers": 0,
+          "mean_mw": 84237.2,
+          "max_mw": 121228.0,
+          "min_mw": 63301.0
+        },
+        {
+          "year_month": "2024-06",
+          "rows": 720,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.42,
+          "outliers": 0,
+          "mean_mw": 100257.6,
+          "max_mw": 147486.0,
+          "min_mw": 64661.0
+        },
+        {
+          "year_month": "2024-07",
+          "rows": 744,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.13,
+          "outliers": 0,
+          "mean_mw": 107751.9,
+          "max_mw": 151816.0,
+          "min_mw": 71434.0
+        },
+        {
+          "year_month": "2024-08",
+          "rows": 744,
+          "imputed_or_diff": 142,
+          "imputed_pct": 19.09,
+          "outliers": 0,
+          "mean_mw": 102366.3,
+          "max_mw": 148900.0,
+          "min_mw": 68209.0
+        },
+        {
+          "year_month": "2024-09",
+          "rows": 720,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.28,
+          "outliers": 0,
+          "mean_mw": 87944.8,
+          "max_mw": 119794.0,
+          "min_mw": 62350.0
+        },
+        {
+          "year_month": "2024-10",
+          "rows": 744,
+          "imputed_or_diff": 0,
+          "imputed_pct": 0.0,
+          "outliers": 0,
+          "mean_mw": 79163.1,
+          "max_mw": 97642.0,
+          "min_mw": 62323.0
+        },
+        {
+          "year_month": "2024-11",
+          "rows": 720,
+          "imputed_or_diff": 33,
+          "imputed_pct": 4.58,
+          "outliers": 0,
+          "mean_mw": 82963.4,
+          "max_mw": 103361.0,
+          "min_mw": 66432.0
+        },
+        {
+          "year_month": "2024-12",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 97064.2,
+          "max_mw": 120904.0,
+          "min_mw": 71917.0
+        }
+      ]
+    },
+    "weather": {
+      "total_rows": 43848,
+      "duplicate_timestamps": 0,
+      "null_counts": {
+        "temp_c": 0,
+        "rel_humidity_pct": 0,
+        "wind_speed_kmh": 0,
+        "cloud_cover_pct": 0,
+        "direct_solar_wm2": 0
+      },
+      "weather_stats": {
+        "temp_c": {
+          "min": -17.1,
+          "max": 37.3,
+          "mean": 13.75
+        },
+        "rel_humidity_pct": {
+          "min": 14.0,
+          "max": 100.0,
+          "mean": 67.3
+        },
+        "wind_speed_kmh": {
+          "min": 0.0,
+          "max": 45.4,
+          "mean": 11.7
+        },
+        "cloud_cover_pct": {
+          "min": 0.0,
+          "max": 100.0,
+          "mean": 56.02
+        },
+        "direct_solar_wm2": {
+          "min": 0.0,
+          "max": 970.5,
+          "mean": 201.32
+        }
+      },
+      "alignment_with_demand_pct": 100.0
+    }
+  },
+  "NYIS": {
+    "region": "NYIS",
+    "demand": {
+      "total_rows": 43848,
+      "expected_rows": 43848,
+      "min_timestamp": "2020-01-01 00:00:00+00:00",
+      "max_timestamp": "2024-12-31 23:00:00+00:00",
+      "duplicate_timestamps": 0,
+      "missing_hours": 0,
+      "raw_nans": 0,
+      "clean_nans": 0,
+      "raw_zero_or_negative": 3,
+      "clean_zero_or_negative": 0,
+      "imputed_source_revisions_count": 475,
+      "imputed_pct": 1.083,
+      "outlier_flags_count": 0,
+      "raw_stats": {
+        "min": 0.0,
+        "max": 30915.0,
+        "mean": 17162.786398467433,
+        "median": 16691.0,
+        "std": 3126.448327862215
+      },
+      "clean_stats": {
+        "min": 11366.0,
+        "max": 30915.0,
+        "mean": 17164.253398102537,
+        "median": 16691.0,
+        "std": 3123.628459181573
+      },
+      "annual_means": {
+        "2020": 17093.9,
+        "2021": 17344.7,
+        "2022": 17424.4,
+        "2023": 16780.9,
+        "2024": 17177.5
+      },
+      "monthly_audit": [
+        {
+          "year_month": "2020-01",
+          "rows": 744,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.67,
+          "outliers": 0,
+          "mean_mw": 17629.2,
+          "max_mw": 21889.0,
+          "min_mw": 12829.0
+        },
+        {
+          "year_month": "2020-02",
+          "rows": 696,
+          "imputed_or_diff": 6,
+          "imputed_pct": 0.86,
+          "outliers": 0,
+          "mean_mw": 17362.4,
+          "max_mw": 21022.0,
+          "min_mw": 13575.0
+        },
+        {
+          "year_month": "2020-03",
+          "rows": 744,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.94,
+          "outliers": 0,
+          "mean_mw": 15654.0,
+          "max_mw": 19550.0,
+          "min_mw": 12284.0
+        },
+        {
+          "year_month": "2020-04",
+          "rows": 720,
+          "imputed_or_diff": 14,
+          "imputed_pct": 1.94,
+          "outliers": 0,
+          "mean_mw": 14333.6,
+          "max_mw": 16791.0,
+          "min_mw": 11694.0
+        },
+        {
+          "year_month": "2020-05",
+          "rows": 744,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.67,
+          "outliers": 0,
+          "mean_mw": 14370.9,
+          "max_mw": 20120.0,
+          "min_mw": 11366.0
+        },
+        {
+          "year_month": "2020-06",
+          "rows": 720,
+          "imputed_or_diff": 10,
+          "imputed_pct": 1.39,
+          "outliers": 0,
+          "mean_mw": 17910.8,
+          "max_mw": 26974.0,
+          "min_mw": 11783.0
+        },
+        {
+          "year_month": "2020-07",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 22073.8,
+          "max_mw": 30656.0,
+          "min_mw": 14982.0
+        },
+        {
+          "year_month": "2020-08",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 20391.4,
+          "max_mw": 29680.0,
+          "min_mw": 13710.0
+        },
+        {
+          "year_month": "2020-09",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 16996.7,
+          "max_mw": 24231.0,
+          "min_mw": 11964.0
+        },
+        {
+          "year_month": "2020-10",
+          "rows": 744,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.21,
+          "outliers": 0,
+          "mean_mw": 15269.4,
+          "max_mw": 18694.0,
+          "min_mw": 12220.0
+        },
+        {
+          "year_month": "2020-11",
+          "rows": 720,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.25,
+          "outliers": 0,
+          "mean_mw": 15674.1,
+          "max_mw": 20463.0,
+          "min_mw": 12143.0
+        },
+        {
+          "year_month": "2020-12",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 17366.6,
+          "max_mw": 22536.0,
+          "min_mw": 12867.0
+        },
+        {
+          "year_month": "2021-01",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 17752.6,
+          "max_mw": 22495.0,
+          "min_mw": 14025.0
+        },
+        {
+          "year_month": "2021-02",
+          "rows": 672,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.74,
+          "outliers": 0,
+          "mean_mw": 18097.6,
+          "max_mw": 21741.0,
+          "min_mw": 13777.0
+        },
+        {
+          "year_month": "2021-03",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 16041.3,
+          "max_mw": 20791.0,
+          "min_mw": 12065.0
+        },
+        {
+          "year_month": "2021-04",
+          "rows": 720,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.25,
+          "outliers": 0,
+          "mean_mw": 14733.2,
+          "max_mw": 17618.0,
+          "min_mw": 11622.0
+        },
+        {
+          "year_month": "2021-05",
+          "rows": 744,
+          "imputed_or_diff": 10,
+          "imputed_pct": 1.34,
+          "outliers": 0,
+          "mean_mw": 15207.7,
+          "max_mw": 22622.0,
+          "min_mw": 11788.0
+        },
+        {
+          "year_month": "2021-06",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 19024.6,
+          "max_mw": 30915.0,
+          "min_mw": 12109.0
+        },
+        {
+          "year_month": "2021-07",
+          "rows": 744,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.4,
+          "outliers": 0,
+          "mean_mw": 20160.0,
+          "max_mw": 28352.0,
+          "min_mw": 12937.0
+        },
+        {
+          "year_month": "2021-08",
+          "rows": 744,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.27,
+          "outliers": 0,
+          "mean_mw": 20986.7,
+          "max_mw": 30302.0,
+          "min_mw": 13624.0
+        },
+        {
+          "year_month": "2021-09",
+          "rows": 720,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.42,
+          "outliers": 0,
+          "mean_mw": 17521.3,
+          "max_mw": 24608.0,
+          "min_mw": 12465.0
+        },
+        {
+          "year_month": "2021-10",
+          "rows": 744,
+          "imputed_or_diff": 10,
+          "imputed_pct": 1.34,
+          "outliers": 0,
+          "mean_mw": 15530.1,
+          "max_mw": 19589.0,
+          "min_mw": 12139.0
+        },
+        {
+          "year_month": "2021-11",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 16082.6,
+          "max_mw": 20685.0,
+          "min_mw": 12332.0
+        },
+        {
+          "year_month": "2021-12",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 17006.3,
+          "max_mw": 21142.0,
+          "min_mw": 13162.0
+        },
+        {
+          "year_month": "2022-01",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 18740.8,
+          "max_mw": 23233.0,
+          "min_mw": 13089.0
+        },
+        {
+          "year_month": "2022-02",
+          "rows": 672,
+          "imputed_or_diff": 6,
+          "imputed_pct": 0.89,
+          "outliers": 0,
+          "mean_mw": 17872.7,
+          "max_mw": 22470.0,
+          "min_mw": 13509.0
+        },
+        {
+          "year_month": "2022-03",
+          "rows": 744,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.21,
+          "outliers": 0,
+          "mean_mw": 16299.3,
+          "max_mw": 20844.0,
+          "min_mw": 12266.0
+        },
+        {
+          "year_month": "2022-04",
+          "rows": 720,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.97,
+          "outliers": 0,
+          "mean_mw": 14962.7,
+          "max_mw": 18245.0,
+          "min_mw": 12115.0
+        },
+        {
+          "year_month": "2022-05",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 15434.6,
+          "max_mw": 27040.0,
+          "min_mw": 12005.0
+        },
+        {
+          "year_month": "2022-06",
+          "rows": 720,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.97,
+          "outliers": 0,
+          "mean_mw": 17595.2,
+          "max_mw": 25855.0,
+          "min_mw": 12187.0
+        },
+        {
+          "year_month": "2022-07",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 21184.6,
+          "max_mw": 30499.0,
+          "min_mw": 14107.0
+        },
+        {
+          "year_month": "2022-08",
+          "rows": 744,
+          "imputed_or_diff": 6,
+          "imputed_pct": 0.81,
+          "outliers": 0,
+          "mean_mw": 21406.8,
+          "max_mw": 30216.0,
+          "min_mw": 14106.0
+        },
+        {
+          "year_month": "2022-09",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 17170.1,
+          "max_mw": 23259.0,
+          "min_mw": 12133.0
+        },
+        {
+          "year_month": "2022-10",
+          "rows": 744,
+          "imputed_or_diff": 2,
+          "imputed_pct": 0.27,
+          "outliers": 0,
+          "mean_mw": 14939.2,
+          "max_mw": 18321.0,
+          "min_mw": 11993.0
+        },
+        {
+          "year_month": "2022-11",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 15856.1,
+          "max_mw": 20352.0,
+          "min_mw": 12331.0
+        },
+        {
+          "year_month": "2022-12",
+          "rows": 744,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.94,
+          "outliers": 0,
+          "mean_mw": 17541.4,
+          "max_mw": 21999.0,
+          "min_mw": 13152.0
+        },
+        {
+          "year_month": "2023-01",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 17041.5,
+          "max_mw": 20622.0,
+          "min_mw": 13030.0
+        },
+        {
+          "year_month": "2023-02",
+          "rows": 672,
+          "imputed_or_diff": 1,
+          "imputed_pct": 0.15,
+          "outliers": 0,
+          "mean_mw": 17012.9,
+          "max_mw": 23364.0,
+          "min_mw": 12978.0
+        },
+        {
+          "year_month": "2023-03",
+          "rows": 744,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.94,
+          "outliers": 0,
+          "mean_mw": 16153.4,
+          "max_mw": 20085.0,
+          "min_mw": 12685.0
+        },
+        {
+          "year_month": "2023-04",
+          "rows": 720,
+          "imputed_or_diff": 6,
+          "imputed_pct": 0.83,
+          "outliers": 0,
+          "mean_mw": 14556.8,
+          "max_mw": 18910.0,
+          "min_mw": 11735.0
+        },
+        {
+          "year_month": "2023-05",
+          "rows": 744,
+          "imputed_or_diff": 10,
+          "imputed_pct": 1.34,
+          "outliers": 0,
+          "mean_mw": 14544.9,
+          "max_mw": 19772.0,
+          "min_mw": 11880.0
+        },
+        {
+          "year_month": "2023-06",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 16667.3,
+          "max_mw": 22861.0,
+          "min_mw": 11994.0
+        },
+        {
+          "year_month": "2023-07",
+          "rows": 744,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.67,
+          "outliers": 0,
+          "mean_mw": 20976.2,
+          "max_mw": 28731.0,
+          "min_mw": 14672.0
+        },
+        {
+          "year_month": "2023-08",
+          "rows": 744,
+          "imputed_or_diff": 10,
+          "imputed_pct": 1.34,
+          "outliers": 0,
+          "mean_mw": 18765.3,
+          "max_mw": 24912.0,
+          "min_mw": 13504.0
+        },
+        {
+          "year_month": "2023-09",
+          "rows": 720,
+          "imputed_or_diff": 11,
+          "imputed_pct": 1.53,
+          "outliers": 0,
+          "mean_mw": 17456.2,
+          "max_mw": 30267.0,
+          "min_mw": 12178.0
+        },
+        {
+          "year_month": "2023-10",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 15265.4,
+          "max_mw": 21729.0,
+          "min_mw": 11890.0
+        },
+        {
+          "year_month": "2023-11",
+          "rows": 720,
+          "imputed_or_diff": 3,
+          "imputed_pct": 0.42,
+          "outliers": 0,
+          "mean_mw": 16067.4,
+          "max_mw": 21298.0,
+          "min_mw": 12465.0
+        },
+        {
+          "year_month": "2023-12",
+          "rows": 744,
+          "imputed_or_diff": 6,
+          "imputed_pct": 0.81,
+          "outliers": 0,
+          "mean_mw": 16809.0,
+          "max_mw": 20995.0,
+          "min_mw": 13132.0
+        },
+        {
+          "year_month": "2024-01",
+          "rows": 744,
+          "imputed_or_diff": 57,
+          "imputed_pct": 7.66,
+          "outliers": 0,
+          "mean_mw": 18054.1,
+          "max_mw": 22712.0,
+          "min_mw": 13895.0
+        },
+        {
+          "year_month": "2024-02",
+          "rows": 696,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.29,
+          "outliers": 0,
+          "mean_mw": 17051.4,
+          "max_mw": 20975.0,
+          "min_mw": 13347.0
+        },
+        {
+          "year_month": "2024-03",
+          "rows": 744,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.54,
+          "outliers": 0,
+          "mean_mw": 15694.3,
+          "max_mw": 20370.0,
+          "min_mw": 11971.0
+        },
+        {
+          "year_month": "2024-04",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 14795.2,
+          "max_mw": 19012.0,
+          "min_mw": 12214.0
+        },
+        {
+          "year_month": "2024-05",
+          "rows": 744,
+          "imputed_or_diff": 7,
+          "imputed_pct": 0.94,
+          "outliers": 0,
+          "mean_mw": 15264.1,
+          "max_mw": 21772.0,
+          "min_mw": 11981.0
+        },
+        {
+          "year_month": "2024-06",
+          "rows": 720,
+          "imputed_or_diff": 5,
+          "imputed_pct": 0.69,
+          "outliers": 0,
+          "mean_mw": 18924.7,
+          "max_mw": 28239.0,
+          "min_mw": 12731.0
+        },
+        {
+          "year_month": "2024-07",
+          "rows": 744,
+          "imputed_or_diff": 37,
+          "imputed_pct": 4.97,
+          "outliers": 0,
+          "mean_mw": 21490.7,
+          "max_mw": 28985.0,
+          "min_mw": 14472.0
+        },
+        {
+          "year_month": "2024-08",
+          "rows": 744,
+          "imputed_or_diff": 9,
+          "imputed_pct": 1.21,
+          "outliers": 0,
+          "mean_mw": 19535.3,
+          "max_mw": 28628.0,
+          "min_mw": 13339.0
+        },
+        {
+          "year_month": "2024-09",
+          "rows": 720,
+          "imputed_or_diff": 4,
+          "imputed_pct": 0.56,
+          "outliers": 0,
+          "mean_mw": 16531.8,
+          "max_mw": 22081.0,
+          "min_mw": 12686.0
+        },
+        {
+          "year_month": "2024-10",
+          "rows": 744,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.08,
+          "outliers": 0,
+          "mean_mw": 15022.5,
+          "max_mw": 18593.0,
+          "min_mw": 12315.0
+        },
+        {
+          "year_month": "2024-11",
+          "rows": 720,
+          "imputed_or_diff": 8,
+          "imputed_pct": 1.11,
+          "outliers": 0,
+          "mean_mw": 15679.3,
+          "max_mw": 19330.0,
+          "min_mw": 12626.0
+        },
+        {
+          "year_month": "2024-12",
+          "rows": 744,
+          "imputed_or_diff": 22,
+          "imputed_pct": 2.96,
+          "outliers": 0,
+          "mean_mw": 17989.3,
+          "max_mw": 23061.0,
+          "min_mw": 13321.0
+        }
+      ]
+    },
+    "weather": {
+      "total_rows": 43848,
+      "duplicate_timestamps": 0,
+      "null_counts": {
+        "temp_c": 0,
+        "rel_humidity_pct": 0,
+        "wind_speed_kmh": 0,
+        "cloud_cover_pct": 0,
+        "direct_solar_wm2": 0
+      },
+      "weather_stats": {
+        "temp_c": {
+          "min": -17.3,
+          "max": 37.6,
+          "mean": 12.86
+        },
+        "rel_humidity_pct": {
+          "min": 14.0,
+          "max": 100.0,
+          "mean": 70.5
+        },
+        "wind_speed_kmh": {
+          "min": 0.0,
+          "max": 60.4,
+          "mean": 13.28
+        },
+        "cloud_cover_pct": {
+          "min": 0.0,
+          "max": 100.0,
+          "mean": 56.7
+        },
+        "direct_solar_wm2": {
+          "min": 0.0,
+          "max": 968.2,
+          "mean": 201.66
+        }
+      },
+      "alignment_with_demand_pct": 100.0
+    }
+  }
+}

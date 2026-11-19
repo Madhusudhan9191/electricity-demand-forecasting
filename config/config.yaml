@@ -1,0 +1,76 @@
+# Configuration for Electricity Demand Forecasting with Uncertainty
+project:
+  name: "electricity-demand-forecasting"
+  version: "0.1.0"
+  random_seed: 42
+
+regions:
+  - id: "ERCOT"
+    name: "Electric Reliability Council of Texas"
+    weather_lat: 32.7767
+    weather_lon: -96.7970
+    timezone: "US/Central"
+  - id: "PJM"
+    name: "PJM Interconnection"
+    weather_lat: 39.9526
+    weather_lon: -75.1652
+    timezone: "US/Eastern"
+  - id: "NYIS"
+    name: "New York Independent System Operator"
+    weather_lat: 40.7128
+    weather_lon: -74.0060
+    timezone: "US/Eastern"
+
+timing:
+  forecast_origin_hour: 10 # 10:00 AM local time day D-1
+  forecast_horizon_hours: 24 # 24 hourly steps for day D
+  lead_time_hours: 14 # from 10:00 D-1 to 00:00 D
+  demand_available_lag_hours: 15 # latest known demand at 10:00 D-1 is 09:00 D-1
+
+splits:
+  start_date: "2021-01-01"
+  train_end: "2022-06-30"
+  validation_end: "2023-04-30"
+  test_end: "2023-12-31"
+  rolling_folds:
+    - name: "fold_1_summer"
+      train_end: "2022-06-30"
+      val_start: "2022-07-01"
+      val_end: "2022-08-31"
+    - name: "fold_2_fall"
+      train_end: "2022-08-31"
+      val_start: "2022-09-01"
+      val_end: "2022-10-31"
+    - name: "fold_3_winter"
+      train_end: "2022-11-30"
+      val_start: "2022-12-01"
+      val_end: "2023-01-31"
+    - name: "fold_4_spring"
+      train_end: "2023-02-28"
+      val_start: "2023-03-01"
+      val_end: "2023-04-30"
+
+metrics:
+  primary: "MASE"
+  secondary:
+    - "MAE"
+    - "RMSE"
+    - "sMAPE"
+    - "Bias"
+    - "Peak_MAE"
+    - "Pinball_Loss"
+    - "Coverage_80"
+    - "Coverage_95"
+    - "Width_80"
+    - "Width_95"
+  coverage_tolerance_80: [0.77, 0.83]
+  coverage_tolerance_95: [0.92, 0.97]
+  peak_hours: [14, 15, 16, 17, 18, 19, 20]
+
+paths:
+  raw_demand_dir: "data/raw/demand"
+  raw_weather_dir: "data/raw/weather"
+  processed_dir: "data/processed"
+  exports_dir: "data/exports"
+  models_dir: "models"
+  reports_dir: "reports"
