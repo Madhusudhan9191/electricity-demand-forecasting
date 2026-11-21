@@ -1,0 +1,87 @@
+{
+  "region": "NY",
+  "train_period": "2021-01-01 to 2023-12-31",
+  "train_hours": 26280,
+  "refit_protocol": "Refit on combined train (2021-2022) + validation (2023) [26,280 hours] before single-touch 2024 holdout",
+  "holdout_period": "2024-01-01 to 2024-12-31",
+  "holdout_hours": 8784,
+  "environment": {
+    "python": "3.11.4",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.3",
+    "pandas": "2.3.3",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "duckdb": "1.5.4"
+  },
+  "features": [
+    "hour",
+    "dayofweek",
+    "is_weekend",
+    "month",
+    "dayofyear",
+    "is_holiday",
+    "is_bridge_day",
+    "is_extreme_event",
+    "fourier_daily_sin1",
+    "fourier_daily_cos1",
+    "fourier_daily_sin2",
+    "fourier_daily_cos2",
+    "fourier_weekly_sin1",
+    "fourier_weekly_cos1",
+    "fourier_annual_sin1",
+    "fourier_annual_cos1",
+    "fourier_annual_sin2",
+    "fourier_annual_cos2",
+    "temp_c",
+    "temp_squared",
+    "cooling_degrees",
+    "heating_degrees",
+    "rel_humidity_pct",
+    "apparent_temp_c",
+    "wind_speed_kmh",
+    "cloud_cover_pct",
+    "direct_solar_wm2",
+    "lag_48h",
+    "lag_72h",
+    "lag_168h",
+    "lag_336h",
+    "lag_delta_48_168",
+    "rolling_24h_mean_safe",
+    "rolling_168h_mean_safe",
+    "rolling_24h_max_safe",
+    "rolling_24h_min_safe"
+  ],
+  "pre_declared_winner": {
+    "name": "HistGradientBoosting_Point_Conformal",
+    "mae": 540.753442322991,
+    "rmse": 721.1738252574174,
+    "bias": 12.965551794824757,
+    "rmae": 0.35480603691158624,
+    "coverage_80": 0.7852914389799636,
+    "coverage_95": 0.9375,
+    "skill_vs_48h_naive": 0.411,
+    "skill_vs_ridge_baseline": 0.575
+  },
+  "residual_model": {
+    "name": "HistGradientBoosting_Residual",
+    "mae": 604.690215274256,
+    "rmse": 819.3450328032428,
+    "bias": -26.77605570703401,
+    "rmae": 0.3967570468326742,
+    "coverage_80": 0.7846083788706739,
+    "coverage_95": 0.9326047358834244
+  },
+  "baseline_168": {
+    "mae": 1524.0818533697632,
+    "rmse": 2149.1566076494046
+  },
+  "baseline_48": {
+    "mae": 1314.701388888889,
+    "rmse": 1763.3846416670451
+  },
+  "baseline_ridge": {
+    "mae": 940.2484885957779,
+    "rmse": 1231.9668099343633
+  }
+}

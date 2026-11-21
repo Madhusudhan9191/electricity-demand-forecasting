@@ -24,7 +24,7 @@ Comprehensive schema documentation for all raw datasets, processed feature matri
 
 ### `tableau_hourly_forecasts.csv` (Primary Time-Series Table)
 - **`timestamp`** *(DateTime)*: Hourly UTC timestamp.
-- **`region`** *(String)*: Balancing authority identifier (`ERCOT`, `PJM`, `NYIS`).
+- **`region`** *(String)*: Balancing authority identifier (`TEX`, `MIDA`, `NY`).
 - **`actual_demand_mw`** *(Float)*: Ground truth observed demand in Megawatts (MW).
 - **`forecast_mw`** *(Float)*: HistGradientBoosting point forecast (conditional mean).
 - **`lower_bound_80`** *(Float)*: Lower bound of 80% nominal prediction interval (10th percentile).
@@ -40,7 +40,7 @@ Comprehensive schema documentation for all raw datasets, processed feature matri
 - **`is_holiday`** *(Binary / 0 or 1)*: 1 if US Federal Holiday.
 
 ### `tableau_region_dimension.csv`
-- **`region_id`** *(String)*: Unique region code (`ERCOT`, `PJM`, `NYIS`).
+- **`region_id`** *(String)*: Unique region code (`TEX`, `MIDA`, `NY`).
 - **`region_name`** *(String)*: Full balancing authority title.
 - **`latitude`** *(Float)*: Regional centroid latitude coordinate.
 - **`longitude`** *(Float)*: Regional centroid longitude coordinate.

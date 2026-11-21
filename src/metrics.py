@@ -2,6 +2,14 @@
 Metrics Module.
 Rule 4: Every number in docs and dashboards must come from code or a query.
 Never type metrics by hand. Never hard-code PASS or FAIL.
+
+Defines:
+- MAE, RMSE, sMAPE, Bias (Mean Error).
+- rMAE: Relative MAE vs. 168h seasonal persistence baseline (rMAE_base168 = 1.000 by definition).
+- MASE: Mean Absolute Scaled Error using in-sample seasonal naive scale factor.
+- Region & Season specific Peak MAE.
+- Geometric Mean aggregation for scale-free ratios.
+- Pinball loss, Empirical Coverage, and Interval Width.
 """
 
 import numpy as np
@@ -24,28 +32,54 @@ def compute_bias(y_true, y_pred):
 def compute_smape(y_true, y_pred):
     # Bound between 0% and 200%
     denom = (np.abs(y_true) + np.abs(y_pred)) / 2.0
-    # Avoid zero division
     mask = denom > 1e-6
     if not np.any(mask):
         return 0.0
     return float(np.mean(np.abs(y_true[mask] - y_pred[mask]) / denom[mask]) * 100.0)
 
 
+def compute_rmae(y_true, y_pred, y_base168):
+    """
+    Relative MAE vs 168h Seasonal Naive Baseline.
+    rMAE = MAE_model / MAE_base168.
+    By definition, rMAE of base168 is exactly 1.000.
+    Values < 1.0 indicate skill superior to seasonal persistence.
+    """
+    mae_model = compute_mae(y_true, y_pred)
+    mae_base = compute_mae(y_true, y_base168)
+    if mae_base < 1e-6:
+        return 1.0
+    return float(mae_model / mae_base)
+
+
 def compute_mase(y_true, y_pred, y_train_history, seasonality=168):
     """
-    Mean Absolute Scaled Error (MASE).
-    Denominator is the in-sample mean absolute error of the seasonal naive baseline (seasonality=168h).
+    Mean Absolute Scaled Error (Hyndman & Koehler, 2006).
+    Scale factor is the in-sample mean absolute error of seasonal naive baseline on training data.
     """
-    denom = np.mean(np.abs(y_train_history[seasonality:] - y_train_history[:-seasonality]))
+    if len(y_train_history) <= seasonality:
+        denom = compute_mae(y_true, y_pred)
+    else:
+        denom = np.mean(np.abs(y_train_history[seasonality:] - y_train_history[:-seasonality]))
     if denom < 1e-6:
         denom = 1e-6
     mae = compute_mae(y_true, y_pred)
     return float(mae / denom)
 
 
-def compute_peak_mae(y_true, y_pred, hours, peak_hours=None):
-    if peak_hours is None:
-        peak_hours = [14, 15, 16, 17, 18, 19, 20]
+def compute_geometric_mean(ratios):
+    """
+    Geometric mean aggregation across folds and regions:
+    GM = exp( (1/N) * sum(ln(r)) )
+    Guarantees symmetry and prevents distortion from large positive ratios.
+    """
+    clean_ratios = [float(r) for r in ratios if r > 1e-6 and not np.isnan(r)]
+    if not clean_ratios:
+        return 1.0
+    return float(np.exp(np.mean(np.log(clean_ratios))))
+
+
+def compute_peak_mae(y_true, y_pred, hours, peak_hours):
     mask = np.isin(hours, peak_hours)
     if not np.any(mask):
         return np.nan
@@ -73,7 +107,18 @@ def compute_interval_width(q_lower, q_upper):
     return float(np.mean(q_upper - q_lower))
 
 
-def evaluate_forecast(y_true, y_pred, y_train_history, hours, q_lower_80=None, q_upper_80=None, q_lower_95=None, q_upper_95=None):
+def evaluate_forecast(
+    y_true,
+    y_pred,
+    y_train_history,
+    hours,
+    y_base168,
+    peak_hours,
+    q_lower_80=None,
+    q_upper_80=None,
+    q_lower_95=None,
+    q_upper_95=None
+):
     """
     Comprehensive evaluation dictionary.
     """
@@ -82,8 +127,9 @@ def evaluate_forecast(y_true, y_pred, y_train_history, hours, q_lower_80=None, q
         "RMSE": compute_rmse(y_true, y_pred),
         "sMAPE": compute_smape(y_true, y_pred),
         "Bias": compute_bias(y_true, y_pred),
+        "rMAE": compute_rmae(y_true, y_pred, y_base168),
         "MASE": compute_mase(y_true, y_pred, y_train_history),
-        "Peak_MAE": compute_peak_mae(y_true, y_pred, hours),
+        "Peak_MAE": compute_peak_mae(y_true, y_pred, hours, peak_hours),
     }
 
     if q_lower_80 is not None and q_upper_80 is not None:

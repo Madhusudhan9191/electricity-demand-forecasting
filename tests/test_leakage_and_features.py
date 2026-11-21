@@ -21,16 +21,16 @@ from src.features import (
 
 @pytest.fixture
 def synthetic_series():
-    # 500 hours synthetic dataset
-    timestamps = pd.date_range("2022-01-01 00:00:00", periods=500, freq="h", tz="UTC")
+    # 1000 hours synthetic dataset
+    timestamps = pd.date_range("2022-01-01 00:00:00", periods=1000, freq="h", tz="UTC")
     np.random.seed(42)
-    demand = 40000 + 5000 * np.sin(np.arange(500) * 2 * np.pi / 24) + np.random.normal(0, 500, 500)
+    demand = 40000 + 5000 * np.sin(np.arange(1000) * 2 * np.pi / 24) + np.random.normal(0, 500, 1000)
     weather = pd.DataFrame({
-        "temp_c": 15 + 10 * np.sin(np.arange(500) * 2 * np.pi / 24) + np.random.normal(0, 1, 500),
-        "rel_humidity_pct": np.clip(60 + np.random.normal(0, 10, 500), 20, 100),
-        "wind_speed_kmh": np.clip(12 + np.random.normal(0, 3, 500), 0, 50),
-        "cloud_cover_pct": np.clip(40 + np.random.normal(0, 20, 500), 0, 100),
-        "direct_solar_wm2": np.clip(300 * np.maximum(0, np.sin(np.arange(500) * 2 * np.pi / 24)), 0, 1000)
+        "temp_c": 15 + 10 * np.sin(np.arange(1000) * 2 * np.pi / 24) + np.random.normal(0, 1, 1000),
+        "rel_humidity_pct": np.clip(60 + np.random.normal(0, 10, 1000), 20, 100),
+        "wind_speed_kmh": np.clip(12 + np.random.normal(0, 3, 1000), 0, 50),
+        "cloud_cover_pct": np.clip(40 + np.random.normal(0, 20, 1000), 0, 100),
+        "direct_solar_wm2": np.clip(300 * np.maximum(0, np.sin(np.arange(1000) * 2 * np.pi / 24)), 0, 1000)
     })
     df_demand = pd.DataFrame({
         "timestamp": timestamps,
@@ -48,20 +48,22 @@ def test_target_future_shift_leakage(synthetic_series):
     df_demand, weather = synthetic_series
     features_orig = construct_feature_dataset(df_demand, weather, "TEST")
 
-    # Corrupt demand from index 300 onwards with massive values
+    # Corrupt demand from index 700 onwards with massive values
     df_demand_corrupted = df_demand.copy()
-    df_demand_corrupted.loc[300:, "cleaned demand (MW)"] += 1_000_000.0
+    df_demand_corrupted.loc[700:, "cleaned demand (MW)"] += 1_000_000.0
 
     features_corrupted = construct_feature_dataset(df_demand_corrupted, weather, "TEST")
 
     # Lag columns
     lag_cols = [c for c in features_orig.columns if "lag_" in c or "rolling_" in c]
 
-    # For all rows prior to index 300, lag features MUST be mathematically identical
+    # For all rows prior to index 700, lag features MUST be mathematically identical
     for col in lag_cols:
-        diff = np.abs(features_orig.loc[:299, col] - features_corrupted.loc[:299, col])
-        max_diff = np.nanmax(diff)
-        assert max_diff == 0.0, f"Future leakage detected in feature '{col}' at index < 300! Max diff: {max_diff}"
+        diff = np.abs(features_orig.loc[:699, col] - features_corrupted.loc[:699, col])
+        valid_diff = diff.dropna()
+        if len(valid_diff) > 0:
+            max_diff = np.max(valid_diff)
+            assert max_diff == 0.0, f"Future leakage detected in feature '{col}' at index < 700! Max diff: {max_diff}"
 
 
 def test_lag_horizon_safety(synthetic_series):

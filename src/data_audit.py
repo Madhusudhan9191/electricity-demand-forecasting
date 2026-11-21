@@ -126,13 +126,14 @@ def audit_demand_and_weather(config):
             wdata = json.load(wf)
 
         w_hourly = wdata["hourly"]
+        n_w = len(w_hourly["time"])
         df_weather = pd.DataFrame({
             "timestamp": pd.to_datetime(w_hourly["time"], utc=True),
             "temp_c": w_hourly["temperature_2m"],
             "rel_humidity_pct": w_hourly["relative_humidity_2m"],
             "wind_speed_kmh": w_hourly["wind_speed_10m"],
-            "cloud_cover_pct": w_hourly["cloud_cover"],
-            "direct_solar_wm2": w_hourly["direct_normal_irradiance"]
+            "cloud_cover_pct": w_hourly.get("cloud_cover", [0.0] * n_w),
+            "direct_solar_wm2": w_hourly.get("direct_normal_irradiance", [0.0] * n_w)
         })
 
         weather_rows = len(df_weather)

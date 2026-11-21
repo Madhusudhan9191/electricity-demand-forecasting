@@ -1,71 +1,160 @@
 # Configuration for Electricity Demand Forecasting with Uncertainty
+# Phase 0 Revised Specification (2021-2024 Architecture)
+# Data Attribution: Ruggles et al. (Nature Scientific Data 2020), CC-BY 4.0
+
 project:
   name: "electricity-demand-forecasting"
-  version: "0.1.0"
+  version: "0.3.0"
   random_seed: 42
+  dataset_citation: "Ruggles et al., Nature Scientific Data (2020). Cleaned EIA-930 Regional Aggregates."
+  dataset_license: "CC-BY 4.0"
 
 regions:
-  - id: "ERCOT"
-    name: "Electric Reliability Council of Texas"
-    weather_lat: 32.7767
-    weather_lon: -96.7970
+  - id: "TEX"
+    eia_code: "TEX"
+    name: "Texas Regional Footprint (ERCOT)"
+    grid_type: "Independent Interconnection (Summer Peaking)"
     timezone: "US/Central"
-  - id: "PJM"
-    name: "PJM Interconnection"
-    weather_lat: 39.9526
-    weather_lon: -75.1652
+    weather_stations:
+      - city: "Dallas-Fort Worth"
+        lat: 32.7767
+        lon: -96.7970
+        weight: 0.45
+      - city: "Houston"
+        lat: 29.7604
+        lon: -95.3698
+        weight: 0.40
+      - city: "San Antonio / Austin"
+        lat: 29.4241
+        lon: -98.4936
+        weight: 0.15
+    peak_windows:
+      summer: [15, 16, 17, 18, 19, 20] # Central Time afternoon cooling peak
+      winter_morning: [7, 8, 9]
+      winter_evening: [17, 18, 19, 20]
+      shoulder: [17, 18, 19, 20]
+
+  - id: "MIDA"
+    eia_code: "MIDA"
+    name: "Mid-Atlantic Regional Footprint (PJM)"
+    grid_type: "Regional Transmission Organization (Dual Peaking)"
     timezone: "US/Eastern"
-  - id: "NYIS"
-    name: "New York Independent System Operator"
-    weather_lat: 40.7128
-    weather_lon: -74.0060
+    weather_stations:
+      - city: "Chicago"
+        lat: 41.8781
+        lon: -87.6298
+        weight: 0.35
+      - city: "Philadelphia"
+        lat: 39.9526
+        lon: -75.1652
+        weight: 0.25
+      - city: "Washington / Baltimore"
+        lat: 38.9072
+        lon: -77.0369
+        weight: 0.25
+      - city: "Columbus / Pittsburgh"
+        lat: 39.9612
+        lon: -82.9988
+        weight: 0.15
+    peak_windows:
+      summer: [14, 15, 16, 17, 18, 19] # Eastern Time cooling peak
+      winter_morning: [7, 8, 9]
+      winter_evening: [17, 18, 19, 20]
+      shoulder: [17, 18, 19, 20]
+
+  - id: "NY"
+    eia_code: "NY"
+    name: "New York Regional Footprint (NYISO)"
+    grid_type: "Independent System Operator (Urban High Density)"
     timezone: "US/Eastern"
+    weather_stations:
+      - city: "New York City"
+        lat: 40.7128
+        lon: -74.0060
+        weight: 0.70
+      - city: "Upstate (Buffalo / Albany)"
+        lat: 42.8864
+        lon: -78.8784
+        weight: 0.30
+    peak_windows:
+      summer: [14, 15, 16, 17, 18, 19]
+      winter_morning: [7, 8, 9]
+      winter_evening: [17, 18, 19, 20]
+      shoulder: [17, 18, 19, 20]
 
 timing:
-  forecast_origin_hour: 10 # 10:00 AM local time day D-1
-  forecast_horizon_hours: 24 # 24 hourly steps for day D
+  forecast_origin_hour: 10 # 10:00 AM Local Standard Time on Day D-1
+  forecast_horizon_hours: 24 # 24 hourly steps for Day D (00:00 to 23:00)
   lead_time_hours: 14 # from 10:00 D-1 to 00:00 D
   demand_available_lag_hours: 15 # latest known demand at 10:00 D-1 is 09:00 D-1
+  min_safe_demand_lag_hours: 48 # strictly >= 48 hours for all horizon hours
 
 splits:
   start_date: "2021-01-01"
-  train_end: "2022-06-30"
-  validation_end: "2023-04-30"
-  test_end: "2023-12-31"
-  rolling_folds:
-    - name: "fold_1_summer"
-      train_end: "2022-06-30"
-      val_start: "2022-07-01"
-      val_end: "2022-08-31"
-    - name: "fold_2_fall"
-      train_end: "2022-08-31"
-      val_start: "2022-09-01"
-      val_end: "2022-10-31"
-    - name: "fold_3_winter"
-      train_end: "2022-11-30"
-      val_start: "2022-12-01"
-      val_end: "2023-01-31"
-    - name: "fold_4_spring"
-      train_end: "2023-02-28"
-      val_start: "2023-03-01"
-      val_end: "2023-04-30"
+  # Initial model selection split (Phases 3-4):
+  train_start: "2021-01-01 00:00:00"
+  train_end: "2022-12-31 23:00:00" # 2 full years (17,520 hours) for model selection
+  validation_start: "2023-01-01 00:00:00"
+  validation_end: "2023-12-31 23:00:00" # 1 full year (8,760 hours) across 4 seasonal folds
+  # Final holdout evaluation protocol (Phase 5):
+  # Models are refit on full train + validation (2021-01-01 to 2023-12-31, 26,280 hours) before holdout prediction
+  refit_train_start: "2021-01-01 00:00:00"
+  refit_train_end: "2023-12-31 23:00:00" # 3 full years (26,280 hours)
+  holdout_start: "2024-01-01 00:00:00"
+  holdout_end: "2024-12-31 23:00:00" # Strictly untouched single-touch holdout (8,784 hours, leap year)
+  validation_folds_2023:
+    - name: "fold_1_winter_2023"
+      train_end: "2022-12-31 23:00:00"
+      val_start: "2023-01-01 00:00:00"
+      val_end: "2023-03-31 23:00:00"
+    - name: "fold_2_spring_2023"
+      train_end: "2023-03-31 23:00:00"
+      val_start: "2023-04-01 00:00:00"
+      val_end: "2023-06-30 23:00:00"
+    - name: "fold_3_summer_2023"
+      train_end: "2023-06-30 23:00:00"
+      val_start: "2023-07-01 00:00:00"
+      val_end: "2023-09-30 23:00:00"
+    - name: "fold_4_fall_2023"
+      train_end: "2023-09-30 23:00:00"
+      val_start: "2023-10-01 00:00:00"
+      val_end: "2023-12-31 23:00:00"
+
+extreme_events:
+  - id: "URI_2021"
+    name: "Winter Storm Uri"
+    region: "TEX"
+    start_utc: "2021-02-13 00:00:00"
+    end_utc: "2021-02-19 23:00:00"
+    policy:
+      flag_feature: true
+      train_weight_sensitivity: [1.0, 0.2]
+      separate_evaluation: true
+  - id: "ELLIOTT_2022"
+    name: "Winter Storm Elliott"
+    region: "MIDA"
+    start_utc: "2022-12-22 00:00:00"
+    end_utc: "2022-12-26 23:00:00"
+    policy:
+      flag_feature: true
+      train_weight_sensitivity: [1.0, 0.2]
+      separate_evaluation: true
+
+external_benchmarks:
+  eia_day_ahead_forecast:
+    source_column: "Demand Forecast (MW)"
+    usage: "benchmark_only"
+    leakage_safeguard: "Excluded from feature set because BA publication timestamp precedes origin in some BAs but is unverified in others."
 
 metrics:
-  primary: "MASE"
-  secondary:
-    - "MAE"
-    - "RMSE"
-    - "sMAPE"
-    - "Bias"
-    - "Peak_MAE"
-    - "Pinball_Loss"
-    - "Coverage_80"
-    - "Coverage_95"
-    - "Width_80"
-    - "Width_95"
-  coverage_tolerance_80: [0.77, 0.83]
-  coverage_tolerance_95: [0.92, 0.97]
-  peak_hours: [14, 15, 16, 17, 18, 19, 20]
+  primary: "relative_mae_vs_seasonal_naive_168h" # rMAE = MAE_model / MAE_base168
+  primary_aggregation: "geometric_mean"
+  mase_definition: "in_sample_scaled" # MAE / Mean_InSample_168h_Abs_Diff
+  selection_rule:
+    coverage_80_range: [0.77, 0.83] # Strictly enforced constraint
+    tie_break_1: "validation_rmse"
+    tie_break_2: "parsimony"
+  weather_noise_sigmas: [0.0, 1.0, 2.0, 3.0] # Celsius Gaussian perturbations
 
 paths:
   raw_demand_dir: "data/raw/demand"

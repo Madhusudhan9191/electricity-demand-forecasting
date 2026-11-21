@@ -1,19 +1,19 @@
 region,assertion_id,assertion_name,evaluated_table,status,failed_count,total_count,threshold,description
-ERCOT,DQ_01_NO_DUPLICATES,Zero Duplicate Timestamps,features.parquet,PASS,0,43848,count == 0,Ensures no hourly interval is duplicated.
-ERCOT,DQ_02_GRID_CONTINUITY,Continuous Hourly Grid,features.parquet,PASS,0,43848,count == 0,"Verifies that all 43,848 hours in the 5-year range are present without gaps."
-ERCOT,DQ_03_DEMAND_POSITIVE,Demand Values Strictly Positive,features.parquet,PASS,0,43848,demand_mw > 0,"Asserts electricity grid demand is positive (no zeros, negative, or NaNs)."
-ERCOT,DQ_04_RAW_FEED_DISCREPANCY,Raw EIA Stream Discrepancy Rate,raw_vs_cleaned,WARNING,549,43848,rate < 3.0%,Real historical EIA-930 reporting anomalies identified and imputed by Ruggles et al. (1.25%).
-ERCOT,DQ_05_TEMP_PHYSICAL_BOUNDS,Temperature Physically Bounded,weather,PASS,0,43848,-40C <= temp <= 60C,Asserts air temperature is within physically possible continental boundaries.
-ERCOT,DQ_06_WEATHER_ALIGNMENT,100% Demand-Weather Timestamp Alignment,features_merged,PASS,0,43848,nulls == 0,Verifies that every demand hour aligns to a corresponding ERA5 weather observation.
-PJM,DQ_01_NO_DUPLICATES,Zero Duplicate Timestamps,features.parquet,PASS,0,43848,count == 0,Ensures no hourly interval is duplicated.
-PJM,DQ_02_GRID_CONTINUITY,Continuous Hourly Grid,features.parquet,PASS,0,43848,count == 0,"Verifies that all 43,848 hours in the 5-year range are present without gaps."
-PJM,DQ_03_DEMAND_POSITIVE,Demand Values Strictly Positive,features.parquet,PASS,0,43848,demand_mw > 0,"Asserts electricity grid demand is positive (no zeros, negative, or NaNs)."
-PJM,DQ_04_RAW_FEED_DISCREPANCY,Raw EIA Stream Discrepancy Rate,raw_vs_cleaned,WARNING,1050,43848,rate < 3.0%,Real historical EIA-930 reporting anomalies identified and imputed by Ruggles et al. (2.39%).
-PJM,DQ_05_TEMP_PHYSICAL_BOUNDS,Temperature Physically Bounded,weather,PASS,0,43848,-40C <= temp <= 60C,Asserts air temperature is within physically possible continental boundaries.
-PJM,DQ_06_WEATHER_ALIGNMENT,100% Demand-Weather Timestamp Alignment,features_merged,PASS,0,43848,nulls == 0,Verifies that every demand hour aligns to a corresponding ERA5 weather observation.
-NYIS,DQ_01_NO_DUPLICATES,Zero Duplicate Timestamps,features.parquet,PASS,0,43848,count == 0,Ensures no hourly interval is duplicated.
-NYIS,DQ_02_GRID_CONTINUITY,Continuous Hourly Grid,features.parquet,PASS,0,43848,count == 0,"Verifies that all 43,848 hours in the 5-year range are present without gaps."
-NYIS,DQ_03_DEMAND_POSITIVE,Demand Values Strictly Positive,features.parquet,PASS,0,43848,demand_mw > 0,"Asserts electricity grid demand is positive (no zeros, negative, or NaNs)."
-NYIS,DQ_04_RAW_FEED_DISCREPANCY,Raw EIA Stream Discrepancy Rate,raw_vs_cleaned,WARNING,475,43848,rate < 3.0%,Real historical EIA-930 reporting anomalies identified and imputed by Ruggles et al. (1.08%).
-NYIS,DQ_05_TEMP_PHYSICAL_BOUNDS,Temperature Physically Bounded,weather,PASS,0,43848,-40C <= temp <= 60C,Asserts air temperature is within physically possible continental boundaries.
-NYIS,DQ_06_WEATHER_ALIGNMENT,100% Demand-Weather Timestamp Alignment,features_merged,PASS,0,43848,nulls == 0,Verifies that every demand hour aligns to a corresponding ERA5 weather observation.
+TEX,DQ_01_NO_DUPLICATES,Zero Duplicate Timestamps,features.parquet,PASS,0,43848,count == 0,Ensures no hourly interval is duplicated.
+TEX,DQ_02_GRID_CONTINUITY,Continuous Hourly Grid,features.parquet,PASS,0,43848,count == 0,"Verifies that all 43,848 hours in the 5-year range are present without gaps."
+TEX,DQ_03_DEMAND_POSITIVE,Demand Values Strictly Positive,features.parquet,PASS,0,43848,demand_mw > 0,"Asserts electricity grid demand is positive (no zeros, negative, or NaNs)."
+TEX,DQ_04_RAW_FEED_DISCREPANCY,Raw EIA Stream Discrepancy Rate,raw_vs_cleaned,WARNING,549,43848,rate < 3.0%,Real historical EIA-930 reporting anomalies identified and imputed by Ruggles et al. (1.25%).
+TEX,DQ_05_TEMP_PHYSICAL_BOUNDS,Temperature Physically Bounded,weather,PASS,0,43848,-40C <= temp <= 60C,Asserts air temperature is within physically possible continental boundaries.
+TEX,DQ_06_WEATHER_ALIGNMENT,100% Demand-Weather Timestamp Alignment,features_merged,PASS,0,43848,nulls == 0,Verifies that every demand hour aligns to a corresponding ERA5 weather observation.
+MIDA,DQ_01_NO_DUPLICATES,Zero Duplicate Timestamps,features.parquet,PASS,0,43848,count == 0,Ensures no hourly interval is duplicated.
+MIDA,DQ_02_GRID_CONTINUITY,Continuous Hourly Grid,features.parquet,PASS,0,43848,count == 0,"Verifies that all 43,848 hours in the 5-year range are present without gaps."
+MIDA,DQ_03_DEMAND_POSITIVE,Demand Values Strictly Positive,features.parquet,PASS,0,43848,demand_mw > 0,"Asserts electricity grid demand is positive (no zeros, negative, or NaNs)."
+MIDA,DQ_04_RAW_FEED_DISCREPANCY,Raw EIA Stream Discrepancy Rate,raw_vs_cleaned,WARNING,1050,43848,rate < 3.0%,Real historical EIA-930 reporting anomalies identified and imputed by Ruggles et al. (2.39%).
+MIDA,DQ_05_TEMP_PHYSICAL_BOUNDS,Temperature Physically Bounded,weather,PASS,0,43848,-40C <= temp <= 60C,Asserts air temperature is within physically possible continental boundaries.
+MIDA,DQ_06_WEATHER_ALIGNMENT,100% Demand-Weather Timestamp Alignment,features_merged,PASS,0,43848,nulls == 0,Verifies that every demand hour aligns to a corresponding ERA5 weather observation.
+NY,DQ_01_NO_DUPLICATES,Zero Duplicate Timestamps,features.parquet,PASS,0,43848,count == 0,Ensures no hourly interval is duplicated.
+NY,DQ_02_GRID_CONTINUITY,Continuous Hourly Grid,features.parquet,PASS,0,43848,count == 0,"Verifies that all 43,848 hours in the 5-year range are present without gaps."
+NY,DQ_03_DEMAND_POSITIVE,Demand Values Strictly Positive,features.parquet,PASS,0,43848,demand_mw > 0,"Asserts electricity grid demand is positive (no zeros, negative, or NaNs)."
+NY,DQ_04_RAW_FEED_DISCREPANCY,Raw EIA Stream Discrepancy Rate,raw_vs_cleaned,WARNING,475,43848,rate < 3.0%,Real historical EIA-930 reporting anomalies identified and imputed by Ruggles et al. (1.08%).
+NY,DQ_05_TEMP_PHYSICAL_BOUNDS,Temperature Physically Bounded,weather,PASS,0,43848,-40C <= temp <= 60C,Asserts air temperature is within physically possible continental boundaries.
+NY,DQ_06_WEATHER_ALIGNMENT,100% Demand-Weather Timestamp Alignment,features_merged,PASS,0,43848,nulls == 0,Verifies that every demand hour aligns to a corresponding ERA5 weather observation.

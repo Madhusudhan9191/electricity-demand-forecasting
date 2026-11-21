@@ -1,0 +1,7 @@
+region,model,mae,rmse,bias,rmae,coverage_80,coverage_95,baseline_168_mae
+TEX,HistGradientBoosting_Point_Conformal,2783.6,3607.8,-2472.5,0.622,0.767,0.931,4476.0
+TEX,HistGradientBoosting_Residual,2758.6,3617.5,-2224.2,0.616,0.784,0.931,4476.0
+MIDA,HistGradientBoosting_Point_Conformal,2871.0,3843.2,-1766.1,0.324,0.793,0.932,8854.4
+MIDA,HistGradientBoosting_Residual,3255.9,4523.6,-1649.1,0.368,0.783,0.925,8854.4
+NY,HistGradientBoosting_Point_Conformal,540.8,721.2,13.0,0.355,0.785,0.938,1524.1
+NY,HistGradientBoosting_Residual,604.7,819.3,-26.8,0.397,0.785,0.933,1524.1

@@ -6,24 +6,24 @@ All assertions, PSI drift statistics, and rolling alert hours are computed progr
 
 | Region | Assertion ID | Assertion Name | Status | Failed Count | Total Rows | Threshold Rule |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- |
-| ERCOT | `DQ_01_NO_DUPLICATES` | Zero Duplicate Timestamps | **PASS** | 0 | 43,848 | `count == 0` |
-| ERCOT | `DQ_02_GRID_CONTINUITY` | Continuous Hourly Grid | **PASS** | 0 | 43,848 | `count == 0` |
-| ERCOT | `DQ_03_DEMAND_POSITIVE` | Demand Values Strictly Positive | **PASS** | 0 | 43,848 | `demand_mw > 0` |
-| ERCOT | `DQ_04_RAW_FEED_DISCREPANCY` | Raw EIA Stream Discrepancy Rate | `WARNING` | 549 | 43,848 | `rate < 3.0%` |
-| ERCOT | `DQ_05_TEMP_PHYSICAL_BOUNDS` | Temperature Physically Bounded | **PASS** | 0 | 43,848 | `-40C <= temp <= 60C` |
-| ERCOT | `DQ_06_WEATHER_ALIGNMENT` | 100% Demand-Weather Timestamp Alignment | **PASS** | 0 | 43,848 | `nulls == 0` |
-| PJM | `DQ_01_NO_DUPLICATES` | Zero Duplicate Timestamps | **PASS** | 0 | 43,848 | `count == 0` |
-| PJM | `DQ_02_GRID_CONTINUITY` | Continuous Hourly Grid | **PASS** | 0 | 43,848 | `count == 0` |
-| PJM | `DQ_03_DEMAND_POSITIVE` | Demand Values Strictly Positive | **PASS** | 0 | 43,848 | `demand_mw > 0` |
-| PJM | `DQ_04_RAW_FEED_DISCREPANCY` | Raw EIA Stream Discrepancy Rate | `WARNING` | 1,050 | 43,848 | `rate < 3.0%` |
-| PJM | `DQ_05_TEMP_PHYSICAL_BOUNDS` | Temperature Physically Bounded | **PASS** | 0 | 43,848 | `-40C <= temp <= 60C` |
-| PJM | `DQ_06_WEATHER_ALIGNMENT` | 100% Demand-Weather Timestamp Alignment | **PASS** | 0 | 43,848 | `nulls == 0` |
-| NYIS | `DQ_01_NO_DUPLICATES` | Zero Duplicate Timestamps | **PASS** | 0 | 43,848 | `count == 0` |
-| NYIS | `DQ_02_GRID_CONTINUITY` | Continuous Hourly Grid | **PASS** | 0 | 43,848 | `count == 0` |
-| NYIS | `DQ_03_DEMAND_POSITIVE` | Demand Values Strictly Positive | **PASS** | 0 | 43,848 | `demand_mw > 0` |
-| NYIS | `DQ_04_RAW_FEED_DISCREPANCY` | Raw EIA Stream Discrepancy Rate | `WARNING` | 475 | 43,848 | `rate < 3.0%` |
-| NYIS | `DQ_05_TEMP_PHYSICAL_BOUNDS` | Temperature Physically Bounded | **PASS** | 0 | 43,848 | `-40C <= temp <= 60C` |
-| NYIS | `DQ_06_WEATHER_ALIGNMENT` | 100% Demand-Weather Timestamp Alignment | **PASS** | 0 | 43,848 | `nulls == 0` |
+| TEX | `DQ_01_NO_DUPLICATES` | Zero Duplicate Timestamps | **PASS** | 0 | 43,848 | `count == 0` |
+| TEX | `DQ_02_GRID_CONTINUITY` | Continuous Hourly Grid | **PASS** | 0 | 43,848 | `count == 0` |
+| TEX | `DQ_03_DEMAND_POSITIVE` | Demand Values Strictly Positive | **PASS** | 0 | 43,848 | `demand_mw > 0` |
+| TEX | `DQ_04_RAW_FEED_DISCREPANCY` | Raw EIA Stream Discrepancy Rate | `WARNING` | 549 | 43,848 | `rate < 3.0%` |
+| TEX | `DQ_05_TEMP_PHYSICAL_BOUNDS` | Temperature Physically Bounded | **PASS** | 0 | 43,848 | `-40C <= temp <= 60C` |
+| TEX | `DQ_06_WEATHER_ALIGNMENT` | 100% Demand-Weather Timestamp Alignment | **PASS** | 0 | 43,848 | `nulls == 0` |
+| MIDA | `DQ_01_NO_DUPLICATES` | Zero Duplicate Timestamps | **PASS** | 0 | 43,848 | `count == 0` |
+| MIDA | `DQ_02_GRID_CONTINUITY` | Continuous Hourly Grid | **PASS** | 0 | 43,848 | `count == 0` |
+| MIDA | `DQ_03_DEMAND_POSITIVE` | Demand Values Strictly Positive | **PASS** | 0 | 43,848 | `demand_mw > 0` |
+| MIDA | `DQ_04_RAW_FEED_DISCREPANCY` | Raw EIA Stream Discrepancy Rate | `WARNING` | 1,050 | 43,848 | `rate < 3.0%` |
+| MIDA | `DQ_05_TEMP_PHYSICAL_BOUNDS` | Temperature Physically Bounded | **PASS** | 0 | 43,848 | `-40C <= temp <= 60C` |
+| MIDA | `DQ_06_WEATHER_ALIGNMENT` | 100% Demand-Weather Timestamp Alignment | **PASS** | 0 | 43,848 | `nulls == 0` |
+| NY | `DQ_01_NO_DUPLICATES` | Zero Duplicate Timestamps | **PASS** | 0 | 43,848 | `count == 0` |
+| NY | `DQ_02_GRID_CONTINUITY` | Continuous Hourly Grid | **PASS** | 0 | 43,848 | `count == 0` |
+| NY | `DQ_03_DEMAND_POSITIVE` | Demand Values Strictly Positive | **PASS** | 0 | 43,848 | `demand_mw > 0` |
+| NY | `DQ_04_RAW_FEED_DISCREPANCY` | Raw EIA Stream Discrepancy Rate | `WARNING` | 475 | 43,848 | `rate < 3.0%` |
+| NY | `DQ_05_TEMP_PHYSICAL_BOUNDS` | Temperature Physically Bounded | **PASS** | 0 | 43,848 | `-40C <= temp <= 60C` |
+| NY | `DQ_06_WEATHER_ALIGNMENT` | 100% Demand-Weather Timestamp Alignment | **PASS** | 0 | 43,848 | `nulls == 0` |
 
 ---
 
@@ -33,27 +33,27 @@ All assertions, PSI drift statistics, and rolling alert hours are computed progr
 
 | Region | Feature | KS Statistic | KS p-value | PSI | Drift Classification | Train Mean | Holdout Mean | Mean Delta (%) |
 | :--- | :--- | :---: | :---: | :---: | :--- | :---: | :---: | :---: |
-| **ERCOT** | `demand_mw` | 0.2924 | 0.00e+00 | **0.6293** | Severe Drift (PSI >= 0.25) | 46,502.7 | 54,665.3 | +17.6% |
-| **ERCOT** | `temp_c` | 0.2147 | 3.41e-185 | **0.2696** | Severe Drift (PSI >= 0.25) | 18.7 | 23.7 | +26.8% |
-| **ERCOT** | `cooling_degrees` | 0.2147 | 3.41e-185 | **0.2409** | Moderate Drift (0.10-0.25) | 4.3 | 7.4 | +70.1% |
-| **ERCOT** | `heating_degrees` | 0.1870 | 3.18e-140 | **0.1631** | Moderate Drift (0.10-0.25) | 3.7 | 1.7 | -53.5% |
-| **ERCOT** | `rel_humidity_pct` | 0.0670 | 2.86e-18 | **0.0229** | Stable (PSI < 0.10) | 64.3 | 61.4 | -4.5% |
-| **ERCOT** | `wind_speed_kmh` | 0.1036 | 4.57e-43 | **0.1123** | Moderate Drift (0.10-0.25) | 15.0 | 13.2 | -12.0% |
-| **ERCOT** | `lag_168h` | 0.2824 | 0.00e+00 | **0.5304** | Severe Drift (PSI >= 0.25) | 46,477.4 | 54,531.0 | +17.3% |
-| **PJM** | `demand_mw` | 0.0433 | 7.15e-08 | **0.0199** | Stable (PSI < 0.10) | 89,736.6 | 89,083.2 | -0.7% |
-| **PJM** | `temp_c` | 0.2053 | 3.17e-169 | **0.2981** | Severe Drift (PSI >= 0.25) | 12.7 | 17.1 | +35.5% |
-| **PJM** | `cooling_degrees` | 0.1704 | 2.48e-116 | **0.1028** | Moderate Drift (0.10-0.25) | 2.0 | 3.1 | +50.0% |
-| **PJM** | `heating_degrees` | 0.2053 | 3.17e-169 | **0.2964** | Severe Drift (PSI >= 0.25) | 7.4 | 3.9 | -46.9% |
-| **PJM** | `rel_humidity_pct` | 0.0330 | 9.18e-05 | **0.0155** | Stable (PSI < 0.10) | 66.7 | 67.7 | +1.6% |
-| **PJM** | `wind_speed_kmh` | 0.0820 | 3.99e-27 | **0.0585** | Stable (PSI < 0.10) | 12.0 | 10.7 | -11.5% |
-| **PJM** | `lag_168h` | 0.0626 | 5.34e-16 | **0.0306** | Stable (PSI < 0.10) | 89,858.2 | 88,878.6 | -1.1% |
-| **NYIS** | `demand_mw` | 0.0439 | 4.57e-08 | **0.0225** | Stable (PSI < 0.10) | 17,215.1 | 17,073.1 | -0.8% |
-| **NYIS** | `temp_c` | 0.2186 | 5.28e-192 | **0.2873** | Severe Drift (PSI >= 0.25) | 11.8 | 16.2 | +37.4% |
-| **NYIS** | `cooling_degrees` | 0.1561 | 1.51e-97 | **0.1013** | Moderate Drift (0.10-0.25) | 1.7 | 2.5 | +45.5% |
-| **NYIS** | `heating_degrees` | 0.2186 | 5.28e-192 | **0.2872** | Severe Drift (PSI >= 0.25) | 7.9 | 4.3 | -45.9% |
-| **NYIS** | `rel_humidity_pct` | 0.0484 | 9.59e-10 | **0.0282** | Stable (PSI < 0.10) | 70.0 | 72.3 | +3.3% |
-| **NYIS** | `wind_speed_kmh` | 0.1181 | 6.71e-56 | **0.0987** | Stable (PSI < 0.10) | 13.9 | 11.8 | -14.6% |
-| **NYIS** | `lag_168h` | 0.0611 | 2.82e-15 | **0.0333** | Stable (PSI < 0.10) | 17,235.4 | 17,035.1 | -1.2% |
+| **TEX** | `demand_mw` | 0.2924 | 0.00e+00 | **0.6293** | Severe Drift (PSI >= 0.25) | 46,502.7 | 54,665.3 | +17.6% |
+| **TEX** | `temp_c` | 0.2266 | 1.76e-206 | **0.2814** | Severe Drift (PSI >= 0.25) | 19.6 | 24.2 | +23.0% |
+| **TEX** | `cooling_degrees` | 0.2266 | 1.76e-206 | **0.2600** | Severe Drift (PSI >= 0.25) | 4.2 | 7.3 | +70.7% |
+| **TEX** | `heating_degrees` | 0.1613 | 3.24e-104 | **0.1412** | Moderate Drift (0.10-0.25) | 2.9 | 1.4 | -51.9% |
+| **TEX** | `rel_humidity_pct` | 0.0841 | 1.67e-28 | **0.0349** | Stable (PSI < 0.10) | 69.2 | 65.9 | -4.7% |
+| **TEX** | `wind_speed_kmh` | 0.1177 | 1.68e-55 | **0.1516** | Moderate Drift (0.10-0.25) | 13.9 | 12.3 | -11.8% |
+| **TEX** | `lag_168h` | 0.2824 | 0.00e+00 | **0.5304** | Severe Drift (PSI >= 0.25) | 46,477.4 | 54,531.0 | +17.3% |
+| **MIDA** | `demand_mw` | 0.0433 | 7.15e-08 | **0.0199** | Stable (PSI < 0.10) | 89,736.6 | 89,083.2 | -0.7% |
+| **MIDA** | `temp_c` | 0.2299 | 1.37e-212 | **0.3857** | Severe Drift (PSI >= 0.25) | 11.5 | 16.2 | +41.0% |
+| **MIDA** | `cooling_degrees` | 0.1569 | 1.32e-98 | **0.1029** | Moderate Drift (0.10-0.25) | 1.6 | 2.3 | +41.6% |
+| **MIDA** | `heating_degrees` | 0.2299 | 1.37e-212 | **0.3826** | Severe Drift (PSI >= 0.25) | 8.4 | 4.4 | -47.9% |
+| **MIDA** | `rel_humidity_pct` | 0.0460 | 7.99e-09 | **0.0097** | Stable (PSI < 0.10) | 69.9 | 71.0 | +1.5% |
+| **MIDA** | `wind_speed_kmh` | 0.1578 | 1.03e-99 | **0.1727** | Moderate Drift (0.10-0.25) | 13.8 | 12.1 | -12.8% |
+| **MIDA** | `lag_168h` | 0.0626 | 5.34e-16 | **0.0306** | Stable (PSI < 0.10) | 89,858.2 | 88,878.6 | -1.1% |
+| **NY** | `demand_mw` | 0.0439 | 4.57e-08 | **0.0225** | Stable (PSI < 0.10) | 17,215.1 | 17,073.1 | -0.8% |
+| **NY** | `temp_c` | 0.2309 | 1.96e-214 | **0.3893** | Severe Drift (PSI >= 0.25) | 10.9 | 15.6 | +42.6% |
+| **NY** | `cooling_degrees` | 0.1537 | 1.30e-94 | **0.0497** | Stable (PSI < 0.10) | 1.4 | 2.0 | +45.5% |
+| **NY** | `heating_degrees` | 0.2309 | 1.96e-214 | **0.3878** | Severe Drift (PSI >= 0.25) | 8.7 | 4.6 | -46.7% |
+| **NY** | `rel_humidity_pct` | 0.0558 | 8.19e-13 | **0.0279** | Stable (PSI < 0.10) | 71.4 | 73.2 | +2.6% |
+| **NY** | `wind_speed_kmh` | 0.1201 | 7.91e-58 | **0.1286** | Moderate Drift (0.10-0.25) | 14.2 | 12.2 | -14.2% |
+| **NY** | `lag_168h` | 0.0611 | 2.82e-15 | **0.0333** | Stable (PSI < 0.10) | 17,235.4 | 17,035.1 | -1.2% |
 
 ---
 
@@ -61,6 +61,6 @@ All assertions, PSI drift statistics, and rolling alert hours are computed progr
 
 | Region | Holdout Hours | Error Spike Alert Hours (MAE > 1.5x) | Coverage Breach Hours (Cov < 65%) | Max 7-Day Rolling MAE (MW) | Min 7-Day Rolling Cov80 |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **ERCOT** | 5,880 | 802 (13.64%) | 5,726 (97.38%) | 6,443.4 | 0.000 |
-| **NYIS** | 5,880 | 838 (14.25%) | 3,788 (64.42%) | 1,169.6 | 0.179 |
-| **PJM** | 5,880 | 859 (14.61%) | 3,954 (67.24%) | 9,383.1 | 0.060 |
+| **MIDA** | 8,784 | 1,279 (14.56%) | 1,659 (18.89%) | 9,414.9 | 0.202 |
+| **NY** | 8,784 | 1,174 (13.37%) | 1,051 (11.96%) | 1,257.0 | 0.220 |
+| **TEX** | 8,784 | 717 (8.16%) | 1,550 (17.65%) | 10,278.9 | 0.250 |

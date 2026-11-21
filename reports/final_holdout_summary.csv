@@ -1,0 +1,7 @@
+region,model,model_role,holdout_hours,mae,mae_ci_lower,mae_ci_upper,rmse,bias,rmae,mase,coverage_80,coverage_80_ci_lower,coverage_80_ci_upper,coverage_95,width_80,peak_mae,baseline_168_mae,imputed_hours_count,imputed_pct,mae_non_imputed_hours,rmae_non_imputed_hours
+TEX,HistGradientBoosting_Point_Conformal,Pre-declared Validation Winner,8784,2783.6,2599.9,2984.1,3607.8,-2472.5,0.622,0.626,0.767,0.74,0.792,0.931,8352.3,3140.2,4476.0,162,1.84,2779.3,0.621
+TEX,HistGradientBoosting_Residual,Level-Anchored Comparison Model,8784,2758.6,2577.2,2954.9,3617.5,-2224.2,0.616,0.62,0.784,0.758,0.811,0.931,8760.9,3165.1,4476.0,162,1.84,2760.9,0.617
+MIDA,HistGradientBoosting_Point_Conformal,Pre-declared Validation Winner,8784,2871.0,2695.4,3067.8,3843.2,-1766.1,0.324,0.368,0.793,0.768,0.818,0.932,9242.1,3253.1,8854.4,257,2.93,2862.4,0.328
+MIDA,HistGradientBoosting_Residual,Level-Anchored Comparison Model,8784,3255.9,3026.9,3530.7,4523.6,-1649.1,0.368,0.418,0.783,0.756,0.809,0.925,10497.7,3858.5,8854.4,257,2.93,3231.7,0.371
+NY,HistGradientBoosting_Point_Conformal,Pre-declared Validation Winner,8784,540.8,516.0,568.6,721.2,13.0,0.355,0.382,0.785,0.765,0.806,0.938,1698.4,697.1,1524.1,175,1.99,540.4,0.355
+NY,HistGradientBoosting_Residual,Level-Anchored Comparison Model,8784,604.7,575.7,639.5,819.3,-26.8,0.397,0.428,0.785,0.764,0.805,0.933,1872.4,769.8,1524.1,175,1.99,604.7,0.397

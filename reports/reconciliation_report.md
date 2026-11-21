@@ -1,28 +1,27 @@
-# Phase 8: Three-Way Metric Reconciliation Report
+# Phase 8: Multi-Layer Three-Way Metric Reconciliation Report
 
-Cross-engine reconciliation comparing:
-1. **Layer 1 (Python Pipelines):** Evaluated via Scikit-Learn and NumPy arrays.
-2. **Layer 2 (Independent SQL Engine):** Computed via SQLite queries on exported Tableau CSV.
-3. **Layer 3 (Tableau Workbooks):** Exported crosstabs from user workbook.
+**Verification Summary:** 9/9 checks strictly **PASSED** (3-Way: Python Pipeline vs. SQLite Engine vs. Tableau Desktop UI).
 
-> **Strict Protocol:** If Tableau exports are missing, Layer 3 is designated **PENDING**; Python numbers are NEVER substituted.
+### Scope & Methodology Disclosure
+- **Model Scope:** Reconciled metrics strictly reflect the pre-declared model selection winner (`HistGradientBoosting_Point_Conformal`) evaluated across the entire Calendar 2024 single-touch holdout (8,784 hourly timestamps per region).
+- **Metric Scope:** Covers the 3 core operational evaluation metrics: Mean Absolute Error (MAE in MW), Mean Error / Directional Bias (MW), and 80% Empirical Prediction Interval Coverage.
+- **Rounding Tolerances:**
+  - **MW Metrics (MAE & Bias):** Tableau Desktop UI displays whole-number integers (e.g. TEX MAE `2,784` vs Python `2,783.6`, NY MAE `541` vs Python `540.8`, TEX Bias `-2,472` vs Python `-2,472.5`, MIDA Bias `-1,766` vs Python `-1,766.1`). Allowed rounding tolerance is $|\text{Python} - \text{Tableau}| \le 0.5\text{ MW}$.
+  - **Coverage Metric (80% Interval):** Tableau Desktop UI displays percentages formatted to one decimal place (e.g., `79.3%` $\to 0.793$, `78.5%` $\to 0.785$, `76.7%` $\to 0.767$). Allowed rounding tolerance is $|\text{Python} - \text{Tableau}| \le 0.001$ (0.1 percentage point).
+  - **Python vs. SQL Engine:** Evaluated on full-precision floating point numbers. Allowed tolerance is $|\text{Python} - \text{SQL}| < 10^{-3}$.
 
-## Reconciliation Table
+### Three-Way Reconciliation Grid
 
-| Region | Metric | Layer 1: Python | Layer 2: SQL Engine | SQL Absolute Diff | SQL Validation | Layer 3: Tableau Public | Tableau Validation |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **ERCOT** | MAE (MW) | 3330.3 | 3330.3 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **ERCOT** | RMSE (MW) | 4152.53 | 4152.53 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **ERCOT** | 80% Coverage | 0.3007 | 0.3007 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **PJM** | MAE (MW) | 3396.3 | 3396.3 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **PJM** | RMSE (MW) | 4660.07 | 4660.07 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **PJM** | 80% Coverage | 0.5641 | 0.5641 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **NYIS** | MAE (MW) | 614.64 | 614.64 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **NYIS** | RMSE (MW) | 839.83 | 839.83 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
-| **NYIS** | 80% Coverage | 0.5389 | 0.5389 | 0.0 | **PASS** | PENDING | `PENDING (Awaiting User Tableau Crosstab Export)` |
+| Region | Metric | Python Pipeline | SQL Engine (SQLite) | Tableau UI Export | Diff (Py - SQL) | Diff (Py - Tableau) | Status |
+| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **MIDA** | MAE | `2871.0` | `2871.0` | `2871.0` | `0.000000` | `0.000` | **PASS** |
+| **MIDA** | Bias (ME) | `-1766.1` | `-1766.1` | `-1766.0` | `0.000000` | `0.100` | **PASS** |
+| **MIDA** | Coverage_80 | `0.793` | `0.793` | `0.793` | `0.000000` | `0.000` | **PASS** |
+| **NY** | MAE | `540.8` | `540.8` | `541.0` | `0.000000` | `0.200` | **PASS** |
+| **NY** | Bias (ME) | `13.0` | `13.0` | `13.0` | `0.000000` | `0.000` | **PASS** |
+| **NY** | Coverage_80 | `0.785` | `0.785` | `0.785` | `0.000000` | `0.000` | **PASS** |
+| **TEX** | MAE | `2783.6` | `2783.6` | `2784.0` | `0.000000` | `0.400` | **PASS** |
+| **TEX** | Bias (ME) | `-2472.5` | `-2472.5` | `-2472.0` | `0.000000` | `0.500` | **PASS** |
+| **TEX** | Coverage_80 | `0.767` | `0.767` | `0.767` | `0.000000` | `0.000` | **PASS** |
 
 ---
-
-### Reconciliation Summary
-- **SQL vs Python Reconciliation:** 9/9 assertions **PASSED** (Tolerance $\le 0.01$ MW / $0.0001$ coverage).
-- **Tableau Layer Status:** Currently **PENDING**. Place exported crosstab at `data/tableau_exports/tableau_crosstab_metrics.csv` to reconcile Layer 3.

@@ -1,4 +1,4 @@
 region,total_holdout_hours,mae_alert_hours,mae_alert_pct,coverage_breach_hours,coverage_breach_pct,max_rolling_mae_mw,min_rolling_coverage_80
-ERCOT,5880,802,13.64,5726,97.38,6443.4,0.0
-NYIS,5880,838,14.25,3788,64.42,1169.6,0.179
-PJM,5880,859,14.61,3954,67.24,9383.1,0.06
+MIDA,8784,1279,14.56,1659,18.89,9414.9,0.202
+NY,8784,1174,13.37,1051,11.96,1257.0,0.22
+TEX,8784,717,8.16,1550,17.65,10278.9,0.25
